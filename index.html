@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лазерхауз — Ціни, яких більше не буде! • Тільки 2 дні</title>
+<meta name="description" content="Три легендарні процедури Лазерхауз за цінами, яких більше не буде. Лімітована кількість. Діє лише 2 дні. Процедура дійсна 1 рік.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --black:#070405;
+  --bg:#080506;
+  --ink:#f5efea;
+  --muted:#a89e9b;
+  --faint:#736a68;
+  --red:#e21d28;        /* корпоративний червоний (лого #d02828) */
+  --red-2:#a8131b;      /* глибокий */
+  --red-bright:#ff434c; /* сяйво/акцент */
+  --red-soft:rgba(226,29,40,.13);
+  --line:rgba(226,29,40,.22);
+  --line-soft:rgba(255,255,255,.07);
+  --card:rgba(255,255,255,.022);
+  --glass:rgba(24,12,13,.6);
+  --r:20px;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Manrope",system-ui,sans-serif;
+  --num:"Oswald","Manrope",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ============ ATMOSPHERE ============ */
+.bg-fx{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+.foot .fon{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:min(820px,94%);aspect-ratio:1697/927;
+  background:url(fon.png) center/contain no-repeat;mix-blend-mode:screen;opacity:.42;filter:brightness(1.05) saturate(1);pointer-events:none;z-index:0;
+  -webkit-mask-image:radial-gradient(70% 68% at 50% 50%,#000 32%,transparent 74%);
+  mask-image:radial-gradient(70% 68% at 50% 50%,#000 32%,transparent 74%)}
+@media(max-width:560px){.foot .fon{width:120%}}
+.orb{position:absolute;border-radius:50%;filter:blur(95px);opacity:.3;mix-blend-mode:screen}
+.orb.a{width:42vw;height:42vw;top:-16vw;left:-12vw;background:radial-gradient(circle,rgba(226,29,40,.4),transparent 70%);animation:float 22s ease-in-out infinite}
+.orb.b{width:40vw;height:40vw;bottom:-18vw;right:-10vw;background:radial-gradient(circle,rgba(120,14,20,.5),transparent 70%);animation:float 28s ease-in-out infinite reverse}
+.orb.c{width:28vw;height:28vw;top:46%;left:60%;background:radial-gradient(circle,rgba(255,67,76,.14),transparent 70%);animation:float 26s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(4vw,5vw)}}
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+/* ============ SHELL ============ */
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+section{position:relative}
+
+/* ============ NAV ============ */
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+  background:linear-gradient(180deg,rgba(8,5,6,.92),rgba(8,5,6,.45));border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{height:42px;width:auto;filter:brightness(0) invert(1) drop-shadow(0 0 14px rgba(226,29,40,.5));transition:.4s}
+.logo:hover{filter:brightness(0) invert(1) drop-shadow(0 0 22px rgba(226,29,40,.85))}
+.nav-cta{font-weight:700;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;color:#fff;
+  background:linear-gradient(135deg,var(--red),var(--red-2));padding:11px 20px;border-radius:100px;
+  text-decoration:none;white-space:nowrap;transition:.3s;box-shadow:0 4px 20px rgba(226,29,40,.3)}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 26px rgba(226,29,40,.5)}
+@media(max-width:560px){.nav-cta{display:none}}
+
+/* ============ HERO ============ */
+.hero{padding:38px 0 14px;text-align:center}
+.eyebrow{font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--red-bright);
+  font-weight:700;margin-bottom:14px;opacity:0;animation:rise .9s .1s forwards}
+.eyebrow span{display:inline-block;height:1px;width:26px;background:var(--red);vertical-align:middle;margin:0 12px;opacity:.6}
+.hero h1{font-family:var(--serif);font-weight:600;line-height:.92;letter-spacing:-.01em;
+  font-size:clamp(48px,9.5vw,108px);margin-bottom:4px}
+.hero h1 .l1{display:block;color:var(--ink);opacity:0;animation:rise 1s .2s forwards}
+.hero h1 .l2{display:block;font-style:italic;font-weight:500;font-size:.52em;line-height:1.04;margin-top:2px;
+  background:linear-gradient(115deg,#fff,var(--red) 42%,var(--red-bright) 72%,#fff);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  opacity:0;animation:rise 1s .35s forwards}
+.hero-sub{max-width:600px;margin:16px auto 0;color:var(--muted);font-size:clamp(15px,2.2vw,19px);font-weight:300;
+  opacity:0;animation:rise 1s .5s forwards}
+.hero-sub b{color:var(--ink);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:18px;opacity:0;animation:rise 1s .65s forwards}
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:500;padding:8px 15px;border-radius:100px;
+  border:1px solid var(--line);background:var(--red-soft);color:var(--ink);backdrop-filter:blur(6px)}
+.chip b{color:var(--red-bright);font-weight:700}
+
+/* ============ COUNTDOWN ============ */
+.timer-wrap{margin:22px auto 0;max-width:560px;opacity:0;animation:rise 1s .8s forwards}
+.timer-status{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--muted);
+  margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:9px}
+.timer-status .dot{width:8px;height:8px;border-radius:50%;background:var(--faint)}
+.timer-status.soon{color:var(--red-bright)}.timer-status.soon .dot{background:var(--red-bright)}
+.timer-status.live{color:var(--red-bright)}
+.timer-status.live .dot{background:var(--red-bright);box-shadow:0 0 0 0 rgba(255,67,76,.6);animation:pulse 1.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,67,76,.55)}70%{box-shadow:0 0 0 12px rgba(255,67,76,0)}100%{box-shadow:0 0 0 0 rgba(255,67,76,0)}}
+.clock{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.unit{position:relative;background:var(--glass);border:1px solid var(--line);border-radius:14px;
+  padding:14px 6px 11px;backdrop-filter:blur(10px);overflow:hidden}
+.unit::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(226,29,40,.1),transparent 60%)}
+.unit .num{font-family:var(--num);font-weight:600;font-size:clamp(34px,8vw,52px);line-height:1;color:var(--ink);
+  font-variant-numeric:tabular-nums;letter-spacing:.01em;position:relative}
+.unit .lab{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:6px;font-weight:600;position:relative}
+.timer-wrap.live .unit{border-color:rgba(255,67,76,.45)}
+.timer-wrap.live .unit .num{color:#fff}
+.timer-wrap.live .unit::before{background:linear-gradient(180deg,rgba(255,67,76,.16),transparent 60%)}
+.timer-note{font-size:12.5px;color:var(--faint);margin-top:12px}
+
+/* ============ SECTION HEAD ============ */
+.shead{text-align:center;max-width:620px;margin:0 auto 30px}
+.shead .tag{font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--red-bright);font-weight:700}
+.shead h2{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5.5vw,52px);line-height:1.04;margin:10px 0 10px}
+.shead h2 em{font-style:italic;color:var(--red-bright)}
+.shead p{color:var(--muted);font-weight:300;font-size:16px}
+
+/* ============ OFFERS ============ */
+.offers{padding:26px 0 18px;position:relative}
+.offers::before{content:"";position:absolute;top:8%;left:50%;transform:translateX(-50%);width:min(92%,1000px);height:80%;
+  background:radial-gradient(60% 55% at 50% 40%,rgba(226,29,40,.08),transparent 70%);pointer-events:none;z-index:0}
+.offers .wrap{position:relative;z-index:1}
+.shead{margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.grid{grid-template-columns:1fr;max-width:430px;margin:0 auto}}
+.card{position:relative;background:linear-gradient(180deg,rgba(226,29,40,.035),rgba(255,255,255,.015) 45%);
+  border:1px solid var(--line-soft);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),border-color .45s,box-shadow .45s;
+  box-shadow:0 22px 54px -30px rgba(0,0,0,.9),0 0 0 1px rgba(226,29,40,.05);
+  opacity:0;transform:translateY(30px)}
+.card.in{opacity:1;transform:none}
+.card:hover{transform:translateY(-9px);border-color:rgba(226,29,40,.6);box-shadow:0 34px 70px -26px rgba(0,0,0,.95),0 0 54px -16px rgba(226,29,40,.5)}
+.media{position:relative;height:250px;overflow:hidden;isolation:isolate}
+.media .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;
+  filter:grayscale(.22) contrast(1.04) brightness(1);transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .55s}
+.card:hover .media .photo{transform:scale(1.06);filter:grayscale(0) contrast(1.03) brightness(1.05)}
+.media .tint{position:absolute;inset:0;z-index:1;background:linear-gradient(155deg,#e21d28,#7a0c12);mix-blend-mode:multiply;opacity:.48;transition:opacity .55s;pointer-events:none}
+.card:hover .media .tint{opacity:0}
+.media .shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,5,6,.1) 35%,rgba(8,5,6,.82) 88%,#080506);transition:opacity .55s;pointer-events:none}
+.card:hover .media .shade{opacity:.5}
+.media .shine{position:absolute;top:0;left:-60%;z-index:2;width:50%;height:100%;background:linear-gradient(110deg,transparent,rgba(255,255,255,.22),transparent);transform:skewX(-20deg);pointer-events:none}
+.card:hover .media .shine{animation:shine 1.1s forwards}
+@keyframes shine{to{left:120%}}
+.badge{position:absolute;top:13px;right:13px;z-index:3;font-family:var(--num);font-weight:700;font-size:17px;color:#fff;
+  background:linear-gradient(135deg,var(--red),var(--red-2));padding:5px 13px;border-radius:100px;
+  box-shadow:0 6px 18px rgba(226,29,40,.45);letter-spacing:.02em}
+.card-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.cat{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--red-bright);font-weight:700;margin-bottom:8px}
+.card h3{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.1;margin-bottom:9px}
+.desc{color:var(--muted);font-size:14px;font-weight:300;flex:1;margin-bottom:15px;line-height:1.5}
+.price-box{background:linear-gradient(135deg,rgba(226,29,40,.2),rgba(18,7,8,.55));border:1px solid var(--line);
+  border-radius:15px;padding:13px 16px 12px;margin-bottom:16px}
+.price{display:flex;align-items:baseline;gap:11px;margin-bottom:12px}
+.price .new{font-family:var(--num);font-weight:700;font-size:48px;line-height:.85;color:#fff;letter-spacing:.01em}
+.price .cur{font-family:var(--num);font-size:18px;color:var(--red-bright);font-weight:700;align-self:flex-end;margin-bottom:5px}
+.price .old{font-family:var(--num);font-size:18px;color:var(--faint);text-decoration:line-through;text-decoration-color:var(--red);font-weight:500;margin-left:auto;align-self:flex-end;margin-bottom:5px}
+.save{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:#fff;font-weight:700;
+  background:var(--red);padding:5px 12px;border-radius:100px}
+.save::before{content:"▼";font-size:8px}
+.save b{color:#fff;font-weight:800}
+.valid{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);
+  padding:11px 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);margin-bottom:15px}
+.valid svg{color:var(--red-bright);flex-shrink:0}
+.buy{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:16px;
+  letter-spacing:.06em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,var(--red),var(--red-2));
+  border:none;border-radius:13px;padding:16px;cursor:pointer;text-decoration:none;transition:.3s;overflow:hidden;width:100%}
+.buy::after{content:"";position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(110deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-20deg)}
+.buy:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(226,29,40,.5)}
+.buy:hover::after{animation:shine 1s forwards}
+.buy.locked{background:rgba(255,255,255,.05);color:var(--faint);cursor:not-allowed;border:1px solid var(--line-soft);
+  box-shadow:none;text-transform:none;letter-spacing:.02em;font-weight:600}
+.buy.locked::after{display:none}.buy.locked:hover{transform:none}
+.buy svg{flex-shrink:0}
+.scarce{text-align:center;font-size:11.5px;color:var(--red-bright);font-weight:600;margin-top:11px}
+
+/* ============ STEPS ============ */
+.steps{padding:54px 0}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:780px){.steps-grid{grid-template-columns:1fr;max-width:450px;margin:0 auto}}
+.step{position:relative;padding:26px 24px;border:1px solid var(--line-soft);border-radius:var(--r);background:var(--card);
+  opacity:0;transform:translateY(26px);transition:.6s}
+.step.in{opacity:1;transform:none}
+.step .n{font-family:var(--num);font-weight:700;font-size:46px;line-height:1;
+  background:linear-gradient(135deg,var(--red-bright),var(--red-2));-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;margin-bottom:10px;letter-spacing:.02em}
+.step h4{font-family:var(--serif);font-size:23px;font-weight:600;margin-bottom:7px}
+.step p{color:var(--muted);font-size:14px;font-weight:300}
+
+/* ============ CONDITIONS ============ */
+.cond{padding:14px 0 54px}
+.cond-box{border:1px solid var(--line);border-radius:24px;padding:clamp(26px,4.5vw,46px);
+  background:linear-gradient(160deg,rgba(226,29,40,.07),rgba(255,255,255,.01));position:relative;overflow:hidden}
+.cond-box::before{content:"";position:absolute;top:-40%;right:-10%;width:50%;height:180%;background:radial-gradient(circle,rgba(226,29,40,.12),transparent 70%)}
+.cond-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 36px;position:relative}
+@media(max-width:680px){.cond-grid{grid-template-columns:1fr}}
+.cond-item{display:flex;gap:15px}
+.cond-item .ic{flex-shrink:0;width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:var(--red-soft);border:1px solid var(--line);color:var(--red-bright)}
+.cond-item h5{font-size:15.5px;font-weight:700;margin-bottom:3px}
+.cond-item p{color:var(--muted);font-size:13.5px;font-weight:300}
+.cond-item b{color:var(--red-bright);font-weight:700}
+
+/* ============ TRUST ============ */
+.trust{padding:0 0 54px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:780px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
+.tcard{text-align:center;padding:26px 14px;border:1px solid var(--line-soft);border-radius:16px;background:var(--card)}
+.tcard .big{font-family:var(--num);font-weight:700;font-size:40px;letter-spacing:.01em;
+  background:linear-gradient(135deg,#fff,var(--red-bright));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.tcard .cap{font-size:12.5px;color:var(--muted);margin-top:5px;font-weight:300}
+
+/* ============ FINAL CTA ============ */
+.final{padding:14px 0 60px;text-align:center}
+.final-box{border:1px solid var(--line);border-radius:28px;padding:clamp(38px,6vw,64px) 24px;position:relative;overflow:hidden;
+  background:radial-gradient(120% 120% at 50% 0%,rgba(226,29,40,.13),transparent 60%)}
+.final h2{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5.5vw,52px);line-height:1.02;margin-bottom:14px}
+.final h2 em{font-style:italic;color:var(--red-bright)}
+.final p{color:var(--muted);max-width:500px;margin:0 auto 26px;font-weight:300;font-size:16px}
+.final .buy{display:inline-flex;width:auto;padding:17px 42px;font-size:16px}
+
+/* ============ FOOTER ============ */
+.foot{position:relative;overflow:hidden;border-top:1px solid var(--line);padding:50px 0 36px;background:linear-gradient(180deg,transparent,rgba(226,29,40,.04))}
+.foot .wrap{position:relative;z-index:1}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:38px;margin-bottom:38px}
+@media(max-width:780px){.foot-grid{grid-template-columns:1fr;gap:30px}}
+.foot .logo{height:32px;margin-bottom:16px}
+.foot-about{color:var(--muted);font-weight:300;font-size:14px;max-width:330px}
+.foot h6{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--red-bright);font-weight:700;margin-bottom:16px}
+.foot a,.foot p.f{display:block;color:var(--ink);text-decoration:none;font-size:14.5px;margin-bottom:11px;transition:.25s;font-weight:400}
+.foot a:hover{color:var(--red-bright)}
+.foot .small{color:var(--faint);font-size:13px;font-weight:300}
+.socials{display:flex;gap:11px;margin-top:5px}
+.socials a{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink);margin:0;transition:.3s}
+.socials a:hover{background:var(--red);color:#fff;border-color:var(--red);transform:translateY(-2px)}
+.foot-bottom{border-top:1px solid var(--line-soft);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--faint);font-size:12px;font-weight:300}
+
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* ============ MAP ============ */
+.map{padding:14px 0 64px}
+.map-wrap{max-width:860px;margin:0 auto;position:relative}
+.map svg{width:100%;height:auto;display:block;overflow:visible;filter:drop-shadow(0 24px 60px rgba(226,29,40,.18))}
+.uashape{fill:rgba(226,29,40,.08);stroke:rgba(226,29,40,.5);stroke-width:3}
+.dot{fill:#ff434c}
+.dot.major{fill:#fff}
+.mlbl{fill:#fff;font-size:16px;font-weight:600;font-family:var(--sans);paint-order:stroke;stroke:rgba(8,5,6,.7);stroke-width:3px}
+@media(max-width:700px){.mlbl{display:none}}
+.map-cities{max-width:940px;margin:28px auto 0;text-align:center}
+.ct-group-title{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--red-bright);font-weight:700;margin:22px 0 12px}
+.ct-group-title:first-child{margin-top:0}
+.ct-group-title b{color:#fff}
+.ct-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.map-cities .ct{font-size:13px;color:var(--muted);font-weight:400;padding:6px 12px;border:1px solid var(--line-soft);border-radius:100px;background:rgba(255,255,255,.02)}
+.map-cities .ct.kyiv{color:#fff;border-color:var(--line);background:var(--red-soft)}
+
+/* sticky mobile buy bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:11px 16px calc(11px + env(safe-area-inset-bottom));
+  background:linear-gradient(180deg,rgba(8,5,6,.4),rgba(8,5,6,.97));backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  transform:translateY(120%);transition:.4s;display:none}
+.mbar.show{transform:none}
+.mbar a{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font-weight:800;font-size:15px;
+  letter-spacing:.04em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,var(--red),var(--red-2));border-radius:12px;padding:15px;text-decoration:none}
+@media(max-width:560px){.mbar{display:block}}
+
+/* ============ PAYMENT MODAL (TEST) ============ */
+.pay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:18px;
+  background:rgba(4,2,3,.78);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:.3s}
+.pay.open{opacity:1;visibility:visible}
+.pay-box{position:relative;width:100%;max-width:430px;background:linear-gradient(180deg,#190e10,#0c0708);
+  border:1px solid var(--line);border-radius:22px;padding:26px 24px 24px;box-shadow:0 40px 90px -30px #000;
+  transform:translateY(18px) scale(.98);transition:.35s cubic-bezier(.2,.8,.2,1);max-height:94vh;overflow:auto}
+.pay.open .pay-box{transform:none}
+.pay-x{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line-soft);
+  background:rgba(255,255,255,.04);color:var(--muted);font-size:18px;line-height:1;cursor:pointer;transition:.25s}
+.pay-x:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.pay-test{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--red-bright);background:var(--red-soft);border:1px solid var(--line);padding:5px 11px;border-radius:100px;margin-bottom:14px}
+.pay h3{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.15;margin-bottom:4px}
+.pay .sum{display:flex;align-items:baseline;gap:10px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--line-soft)}
+.pay .sum .amt{font-family:var(--num);font-weight:700;font-size:30px;color:#fff}
+.pay .sum .amt small{font-size:15px;color:var(--red-bright);font-weight:600;margin-left:3px}
+.pay .sum .lbl{font-size:13px;color:var(--muted)}
+.pay label{display:block;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 6px 2px}
+.pay .fld{margin-bottom:14px}
+.pay .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pay input{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line-soft);border-radius:12px;
+  padding:13px 14px;color:var(--ink);font-family:var(--sans);font-size:15px;font-weight:500;transition:.2s;outline:none}
+.pay input::placeholder{color:var(--faint)}
+.pay input:focus{border-color:var(--red);background:rgba(226,29,40,.06);box-shadow:0 0 0 3px rgba(226,29,40,.12)}
+.pay input.card{font-family:var(--num);letter-spacing:.12em;font-size:18px}
+.pay-card-wrap{position:relative}
+.pay-card-wrap .brand{position:absolute;right:13px;top:50%;transform:translateY(-50%);font-family:var(--num);font-weight:700;
+  font-size:12px;letter-spacing:.1em;color:var(--faint)}
+.pay-submit{margin-top:8px;width:100%;display:flex;align-items:center;justify-content:center;gap:9px;
+  font-weight:800;font-size:16px;letter-spacing:.05em;text-transform:uppercase;color:#fff;
+  background:linear-gradient(135deg,var(--red),var(--red-2));border:none;border-radius:13px;padding:16px;cursor:pointer;transition:.3s}
+.pay-submit:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(226,29,40,.5)}
+.pay-submit:disabled{opacity:.6;cursor:default;transform:none;box-shadow:none}
+.pay-note{font-size:11.5px;color:var(--faint);text-align:center;margin-top:14px;line-height:1.5}
+.pay-secure{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px;color:var(--muted);margin-top:10px}
+.pay-secure svg{color:var(--red-bright)}
+/* success */
+.pay-ok{text-align:center;padding:14px 4px}
+.pay-ok .ic{width:78px;height:78px;border-radius:50%;margin:6px auto 18px;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle,rgba(226,29,40,.25),rgba(226,29,40,.06));border:1px solid var(--line);color:var(--red-bright);
+  animation:pop .5s cubic-bezier(.2,1.3,.4,1)}
+@keyframes pop{0%{transform:scale(.4);opacity:0}100%{transform:scale(1);opacity:1}}
+.pay-ok h3{margin-bottom:8px}
+.pay-ok p{color:var(--muted);font-size:14px;font-weight:300;margin-bottom:6px}
+.pay-ok b{color:var(--ink);font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="bg-fx"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
+<div class="grain"></div>
+
+<!-- NAV -->
+<nav class="nav"><div class="wrap nav-in">
+  <img src="logo.svg" alt="Лазерхауз" class="logo">
+  <a href="#offers" class="nav-cta">Обрати пропозицію</a>
+</div></nav>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+  <h1>
+    <span class="l1">ЦІНИ</span>
+    <span class="l2">яких більше не буде!</span>
+  </h1>
+  <p class="hero-sub">Три легендарні процедури Лазерхауз. Кількість суворо обмежена, а вікно покупки — <b>лише 2 дні</b>. Встигніть зафіксувати ціну.</p>
+
+  <div class="chips">
+    <span class="chip">🔥 <b>Лімітована</b> кількість</span>
+    <span class="chip">⏳ Діє <b>лише 2 дні</b></span>
+    <span class="chip">✓ Процедура діє <b>1 рік</b></span>
+  </div>
+
+  <div class="timer-wrap" id="timerWrap">
+    <div class="timer-status" id="timerStatus"><span class="dot"></span><span id="statusText">Завантаження…</span></div>
+    <div class="clock">
+      <div class="unit"><div class="num" id="dd">00</div><div class="lab">днів</div></div>
+      <div class="unit"><div class="num" id="hh">00</div><div class="lab">годин</div></div>
+      <div class="unit"><div class="num" id="mm">00</div><div class="lab">хвилин</div></div>
+      <div class="unit"><div class="num" id="ss">00</div><div class="lab">секунд</div></div>
+    </div>
+    <div class="timer-note" id="timerNote"></div>
+  </div>
+</div></header>
+
+<!-- OFFERS -->
+<section class="offers" id="offers"><div class="wrap">
+  <div class="shead">
+    <h2>Оберіть <em>своє</em></h2>
+    <p>Натисніть «Купити» — і процедуру буде оформлено на ваші дані. Без черг, без переплат.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- CARD 1 -->
+    <article class="card" data-offer="epil">
+      <div class="media">
+        <img class="photo" src="https://plus.unsplash.com/premium_photo-1661726996340-8398be0d48ae?fm=jpg&q=80&w=900&fit=crop" alt="Лазерна епіляція ніг" loading="lazy">
+        <div class="tint"></div><div class="shade"></div><div class="shine"></div>
+        <span class="badge">−33%</span>
+      </div>
+      <div class="card-body">
+        <div class="cat">Лазерна епіляція</div>
+        <h3>Гомілки з колінами</h3>
+        <p class="desc">Ідеальна гладкість, що триває роками. Олександритовий лазер преміумкласу — назавжди забудьте про бритву, подразнення та вростання.</p>
+        <div class="price-box">
+          <div class="price"><span class="new">699</span><span class="cur">грн</span><span class="old">1050 грн</span></div>
+          <div class="save">Ви економите <b>351 грн</b></div>
+        </div>
+        <div class="valid">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          Процедура дійсна 1 рік з моменту покупки
+        </div>
+        <a class="buy" data-buy="epil" href="#">Купити <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="scarce">Залишилось обмаль місць</div>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article class="card" data-offer="botox">
+      <div class="media">
+        <img class="photo" src="https://plus.unsplash.com/premium_photo-1682096423780-41ca1b04af68?fm=jpg&q=80&w=900&fit=crop" alt="Гладке чоло без зморшок" loading="lazy" style="object-position:center 28%">
+        <div class="tint"></div><div class="shade"></div><div class="shine"></div>
+        <span class="badge">−33%</span>
+      </div>
+      <div class="card-body">
+        <div class="cat">Ін'єкції ботокса</div>
+        <h3>Горизонтальні зморшки чола</h3>
+        <p class="desc">Розгладьте чоло за 15 хвилин. Сертифікований препарат, природний результат і жодного ефекту «маски» — лише відпочилий, молодший вигляд.</p>
+        <div class="price-box">
+          <div class="price"><span class="new">2599</span><span class="cur">грн</span><span class="old">3900 грн</span></div>
+          <div class="save">Ви економите <b>1301 грн</b></div>
+        </div>
+        <div class="valid">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          Процедура дійсна 1 рік з моменту покупки
+        </div>
+        <a class="buy" data-buy="botox" href="#">Купити <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="scarce">Залишилось обмаль місць</div>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article class="card" data-offer="morpheus">
+      <div class="media">
+        <img class="photo" src="https://plus.unsplash.com/premium_photo-1708271587288-0d8c58bda098?fm=jpg&q=80&w=900&fit=crop" alt="Підтягнуте обличчя та шия" loading="lazy">
+        <div class="tint"></div><div class="shade"></div><div class="shine"></div>
+        <span class="badge">−34%</span>
+      </div>
+      <div class="card-body">
+        <div class="cat">RF-ліфтинг MORPHEUS8</div>
+        <h3>Обличчя + шия</h3>
+        <p class="desc">Революційний апаратний ліфтинг №1 у світі. Фракційний RF із мікроголками підтягує овал, розгладжує шкіру та запускає синтез колагену — підтяжка без скальпеля.</p>
+        <div class="price-box">
+          <div class="price"><span class="new">16 499</span><span class="cur">грн</span><span class="old">25 000 грн</span></div>
+          <div class="save">Ви економите <b>8501 грн</b></div>
+        </div>
+        <div class="valid">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          Процедура дійсна 1 рік з моменту покупки
+        </div>
+        <a class="buy" data-buy="morpheus" href="#">Купити <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="scarce">Залишилось обмаль місць</div>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<!-- CONDITIONS -->
+<section class="cond"><div class="wrap">
+  <div class="cond-box"><div class="cond-grid">
+    <div class="cond-item">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
+      <div><h5>Лімітовано за кількістю та часом</h5><p>Кількість пропозицій <b>суворо обмежена</b>, а купити можна <b>лише протягом 2 днів</b> дії акції. Встигніть.</p></div>
+    </div>
+    <div class="cond-item">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></div>
+      <div><h5>Діє 1 рік з моменту покупки</h5><p>Маєте цілий рік, щоб скористатися процедурою у зручний для вас час.</p></div>
+    </div>
+    <div class="cond-item">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+      <div><h5>Оформлюється на ваші дані</h5><p>Процедуру буде закріплено за <b>даними, які ви вкажете</b> під час оплати. Це ваша персональна пропозиція.</p></div>
+    </div>
+    <div class="cond-item">
+      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+      <div><h5>Безпечна оплата онлайн</h5><p>Оплата картою у захищеному середовищі. Підтвердження приходить миттєво.</p></div>
+    </div>
+  </div></div>
+</div></section>
+
+<!-- FINAL CTA -->
+<section class="final"><div class="wrap">
+  <div class="final-box">
+    <h2>Така ціна — <em>більше не повториться</em></h2>
+    <p>Лише 2 дні та обмежена кількість. Оберіть процедуру та оформіть її просто зараз.</p>
+    <a href="#offers" class="buy">До пропозицій <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</div></section>
+
+<!-- MAP -->
+<section class="map"><div class="wrap">
+  <div class="shead">
+    <div class="tag">Завжди поруч</div>
+    <h2>70+ центрів <em>по всій Україні</em></h2>
+    <p>Завітайте до найближчого центру Лазерхауз у зручний для вас час.</p>
+  </div>
+  <div class="map-wrap">
+    <svg id="uamap" viewBox="0 0 1024 1024" role="img" aria-label="Карта центрів Лазерхауз в Україні">
+      <path id="uapath" class="uashape" d="M6381 8544 c-47 -10 -74 -11 -100 -4 -52 14 -101 12 -107 -4 -3 -8 -35 -34 -70 -57 -53 -34 -67 -39 -79 -29 -13 10 -19 10 -34 -4 -13 -12 -27 -14 -52 -9 -44 8 -96 30 -104 43 -3 5 -17 10 -30 10 -13 0 -27 5 -30 10 -3 6 -13 10 -21 10 -12 0 -14 -9 -9 -43 5 -33 3 -46 -9 -56 -14 -11 -14 -16 -1 -33 12 -18 12 -24 -3 -46 -9 -14 -34 -38 -56 -53 -55 -40 -109 -40 -151 1 -27 27 -35 29 -58 21 -16 -6 -37 -7 -59 0 -18 5 -51 9 -72 9 -22 0 -47 7 -56 15 -15 14 -20 13 -43 -6 -15 -11 -27 -29 -27 -39 0 -18 -40 -36 -50 -21 -14 21 -65 28 -97 13 -18 -9 -33 -20 -33 -25 0 -9 -32 -52 -84 -110 -15 -18 -37 -49 -47 -70 -11 -21 -35 -55 -53 -75 -19 -20 -37 -52 -41 -70 -10 -47 -9 -103 2 -111 15 -10 24 -59 12 -66 -7 -5 -6 -12 4 -23 24 -28 30 -63 17 -103 -11 -33 -17 -39 -42 -39 -16 0 -31 6 -34 15 -4 8 -14 15 -23 15 -10 0 -27 10 -40 21 -19 17 -22 28 -16 56 5 28 1 41 -19 68 -35 45 -88 55 -145 26 -34 -18 -44 -19 -62 -9 -17 11 -22 10 -34 -5 -19 -27 -49 -18 -53 16 -3 21 -9 27 -27 27 -13 0 -33 -9 -44 -21 -11 -12 -24 -18 -30 -15 -6 4 -13 -8 -17 -29 -7 -39 -7 -39 -35 -24 -16 8 -26 7 -45 -6 -21 -14 -24 -14 -24 0 0 8 -8 20 -19 27 -14 9 -18 20 -14 48 9 68 -68 127 -111 85 -8 -8 -27 -14 -43 -13 -65 4 -80 -1 -107 -42 -14 -22 -32 -40 -39 -40 -7 0 -17 19 -23 43 -9 42 -9 42 -67 51 -49 8 -61 7 -74 -7 -16 -15 -19 -14 -45 26 -15 23 -28 48 -28 55 0 19 -40 14 -47 -5 -20 -59 -85 -81 -123 -43 -11 11 -32 20 -46 20 -24 0 -26 -2 -20 -34 6 -30 3 -37 -24 -56 -49 -35 -68 -3 -30 50 l21 29 -52 16 c-62 18 -83 19 -110 5 -13 -7 -25 -7 -38 0 -14 7 -28 7 -47 0 -25 -10 -26 -9 -22 19 3 20 0 32 -10 36 -11 4 -13 16 -8 50 l7 45 -53 0 c-30 0 -59 -5 -65 -11 -8 -8 -17 -8 -31 0 -11 6 -30 11 -42 11 -11 0 -32 12 -45 26 -33 35 -72 44 -112 26 -38 -18 -63 -5 -63 35 0 19 -5 24 -22 23 -81 -7 -119 0 -144 27 -21 22 -35 28 -72 29 -26 0 -60 8 -77 16 -25 12 -49 13 -134 6 -94 -8 -106 -7 -125 10 -43 38 -66 41 -136 18 -67 -21 -130 -24 -284 -13 -66 5 -71 4 -113 -26 -33 -25 -42 -38 -41 -57 3 -33 -6 -46 -53 -76 -22 -14 -52 -38 -67 -55 -25 -27 -30 -29 -61 -20 -19 6 -38 8 -43 4 -6 -3 -7 3 -3 16 5 16 1 23 -18 30 -14 6 -28 14 -31 19 -3 6 -24 3 -51 -7 -33 -12 -44 -20 -39 -31 4 -8 5 -22 4 -30 -1 -8 -1 -47 -1 -87 0 -40 -4 -75 -9 -78 -13 -8 -13 -85 0 -85 5 0 18 -19 28 -42 10 -24 26 -49 35 -57 10 -7 17 -28 17 -47 0 -18 5 -36 10 -39 6 -3 10 -14 10 -24 0 -10 6 -24 14 -30 7 -6 16 -25 20 -42 3 -17 19 -43 36 -59 16 -15 30 -37 30 -48 0 -18 -4 -20 -30 -12 -28 8 -32 6 -41 -17 -7 -20 -6 -35 6 -60 9 -18 20 -33 25 -33 18 0 9 -114 -13 -175 l-22 -60 -83 -5 -83 -5 -47 -52 c-26 -29 -83 -78 -126 -109 -93 -65 -284 -255 -340 -337 -24 -34 -47 -57 -58 -57 -11 0 -18 -7 -18 -18 0 -10 -15 -25 -33 -35 -41 -23 -66 -79 -45 -104 9 -12 13 -48 11 -132 0 -64 -3 -127 -5 -141 -2 -18 4 -28 24 -38 35 -16 50 -44 46 -82 l-3 -29 -73 30 c-93 37 -107 37 -120 -1 -7 -19 -24 -36 -46 -47 -32 -15 -36 -21 -36 -54 0 -23 -6 -41 -15 -46 -8 -5 -21 -28 -30 -53 -16 -45 -50 -95 -96 -142 -47 -47 -54 -88 -30 -161 22 -66 65 -137 82 -137 6 0 35 -23 65 -51 38 -37 54 -59 54 -78 0 -42 13 -52 72 -55 76 -4 82 -10 74 -64 -4 -28 -2 -50 5 -58 17 -21 29 -17 29 11 0 24 3 25 38 19 31 -5 42 -2 62 18 14 13 30 33 36 43 14 25 60 13 69 -18 4 -12 21 -37 38 -55 29 -30 36 -32 95 -32 83 0 150 -17 163 -42 9 -17 17 -19 68 -13 53 6 61 4 118 -29 63 -37 85 -38 147 -5 18 11 102 4 123 -9 5 -4 19 -28 30 -53 13 -28 33 -54 52 -65 17 -10 37 -34 46 -56 12 -32 20 -38 44 -38 67 0 93 13 159 80 63 63 71 68 122 74 31 4 94 4 140 1 51 -4 105 -2 135 5 28 7 78 12 112 12 60 0 63 1 83 34 12 18 32 42 44 51 12 10 26 29 29 43 10 38 18 44 72 58 60 15 141 68 150 97 5 19 6 19 16 3 14 -25 69 -24 69 0 0 9 -9 23 -20 30 -26 16 -26 42 -1 42 11 0 41 -11 66 -24 52 -28 75 -25 75 10 0 29 11 30 35 4 14 -16 26 -19 48 -14 21 4 32 1 41 -12 15 -20 36 -11 36 15 0 9 6 26 14 37 14 18 15 18 21 -9 9 -34 37 -36 59 -3 23 36 54 43 73 16 13 -18 21 -20 58 -15 41 7 43 6 65 -32 39 -64 61 -83 96 -83 35 0 46 -10 48 -44 1 -15 9 -22 29 -24 15 -2 27 -10 27 -17 0 -23 18 -27 42 -11 31 22 58 20 58 -3 0 -10 -6 -24 -14 -30 -8 -6 -16 -21 -19 -31 -7 -27 18 -26 37 2 l15 21 9 -24 c5 -13 11 -33 13 -43 6 -31 26 -29 32 2 7 37 59 62 88 44 10 -7 32 -9 50 -5 38 7 59 -14 59 -60 0 -16 9 -40 20 -54 11 -14 20 -34 20 -45 0 -15 4 -17 16 -10 11 6 27 4 46 -5 27 -14 31 -14 54 8 29 27 41 19 46 -31 2 -26 7 -35 21 -34 21 2 20 5 2 -40 -14 -34 -13 -41 8 -37 5 1 1 -9 -7 -21 -9 -12 -16 -42 -16 -66 0 -31 -7 -53 -26 -77 -16 -22 -23 -39 -18 -47 5 -7 7 -37 5 -66 -2 -44 -1 -51 13 -46 9 3 22 2 29 -4 6 -5 24 -12 38 -15 25 -6 33 -20 53 -80 10 -32 36 -31 72 4 l34 33 0 -36 c0 -20 -5 -40 -11 -43 -7 -5 -8 -25 -4 -56 6 -40 4 -49 -8 -49 -28 0 -29 -19 -3 -44 27 -24 37 -88 16 -101 -18 -11 -1 -23 41 -30 30 -5 43 -13 50 -32 8 -22 14 -25 49 -21 32 3 40 0 40 -13 0 -9 9 -24 20 -34 17 -16 20 -31 20 -117 0 -91 -1 -98 -20 -98 -28 0 -25 -16 7 -46 16 -14 39 -36 53 -49 14 -12 36 -28 49 -35 21 -11 22 -13 8 -27 -13 -13 -23 -14 -58 -5 -46 12 -59 9 -59 -14 0 -34 -46 0 -75 55 -17 33 -35 41 -35 15 0 -11 -6 -13 -19 -9 -15 5 -24 -2 -38 -27 -16 -29 -18 -31 -21 -11 -2 12 -15 26 -30 32 -15 6 -32 21 -37 33 -14 30 -32 33 -40 9 -8 -27 -22 -27 -30 -1 -3 11 -10 20 -15 20 -12 0 -24 -46 -15 -59 3 -6 -1 -11 -9 -11 -8 0 -19 -8 -25 -17 -5 -10 -13 -15 -16 -11 -4 4 -3 12 1 20 4 7 8 38 9 70 1 53 -1 58 -21 58 -12 0 -27 -7 -34 -15 -7 -8 -25 -15 -41 -15 -19 0 -34 -8 -44 -24 -9 -13 -24 -26 -34 -29 -18 -4 -18 -9 -7 -64 9 -42 10 -66 2 -82 -9 -20 -6 -27 22 -52 18 -16 32 -31 32 -34 0 -2 -14 -25 -32 -50 -28 -40 -31 -48 -19 -66 7 -12 11 -22 9 -24 -2 -1 -28 -10 -58 -20 -79 -25 -88 -36 -82 -96 4 -45 2 -51 -17 -56 -12 -3 -21 -13 -21 -24 0 -15 -7 -19 -35 -19 -25 0 -35 -4 -35 -16 0 -10 -6 -14 -15 -10 -19 7 -38 -59 -29 -103 4 -20 3 -31 -5 -31 -6 0 -11 -13 -11 -30 0 -33 -19 -40 -40 -15 -19 22 -86 19 -110 -5 -24 -24 -26 -40 -5 -40 9 0 15 -9 15 -25 0 -36 23 -76 57 -101 53 -39 130 -73 181 -80 55 -7 96 1 74 15 -10 6 -10 15 -3 34 12 32 25 33 69 7 40 -24 39 -24 45 0 5 20 21 29 94 51 24 6 50 20 59 31 13 13 31 18 76 18 66 0 107 -15 158 -58 29 -25 35 -38 40 -81 11 -108 52 -41 56 91 l3 87 -45 -6 c-31 -4 -44 -2 -44 6 0 25 118 135 227 213 68 48 140 109 181 155 84 93 97 115 87 139 -5 11 -16 39 -24 63 -14 36 -24 47 -57 60 -22 9 -52 25 -65 36 -48 38 -44 105 7 105 15 0 23 -4 19 -11 -9 -14 22 -47 67 -70 44 -22 53 -35 50 -70 -1 -18 5 -29 23 -39 20 -11 22 -16 14 -32 -6 -10 -9 -27 -7 -36 3 -14 6 -12 17 8 35 65 126 217 141 235 10 11 22 34 28 51 8 27 7 35 -9 51 -33 32 -15 50 54 58 34 4 88 16 120 27 47 17 62 19 83 9 45 -20 74 -13 110 26 19 20 37 33 41 30 4 -4 1 -13 -5 -19 -7 -7 -12 -15 -12 -19 0 -13 52 -20 66 -9 9 8 37 10 86 5 107 -10 124 11 103 126 -8 41 16 99 40 99 18 0 20 -16 4 -26 -6 -3 -17 -21 -25 -40 -12 -28 -12 -37 0 -61 8 -15 21 -45 30 -67 14 -33 20 -38 42 -33 19 3 30 -2 46 -23 17 -23 31 -30 79 -35 63 -7 77 -25 37 -46 -27 -14 -204 -3 -261 17 -22 8 -72 14 -111 14 -42 0 -77 5 -84 12 -24 24 -22 0 2 -29 34 -41 77 -58 105 -43 14 7 27 7 39 1 9 -5 43 -12 75 -16 42 -5 60 -13 68 -27 6 -11 9 -21 7 -22 -35 -26 -82 -46 -105 -46 -39 0 -61 -23 -43 -45 18 -22 50 -19 50 5 0 29 15 25 40 -10 15 -21 30 -30 50 -30 15 0 30 -7 34 -15 3 -8 17 -15 30 -15 26 0 56 -32 56 -60 0 -11 25 -22 86 -39 l87 -24 51 19 c36 13 79 19 146 20 126 1 125 0 110 19 -19 23 -3 31 28 13 32 -19 62 -8 62 22 0 11 5 20 10 20 6 0 10 -17 10 -37 0 -33 1 -35 13 -18 15 20 42 12 33 -10 -3 -8 1 -19 9 -25 10 -8 14 -8 18 2 3 9 12 4 27 -15 21 -26 23 -27 46 -12 13 8 31 15 40 15 13 0 14 3 5 14 -10 12 -8 19 7 34 16 16 22 17 36 7 13 -10 15 -22 10 -53 -3 -23 -3 -57 0 -77 6 -32 10 -35 41 -35 19 0 35 -4 35 -10 0 -5 -7 -7 -15 -4 -11 5 -17 -3 -21 -25 -7 -33 -11 -36 -33 -22 -10 7 -23 3 -39 -10 -18 -14 -28 -16 -38 -8 -9 8 -22 2 -51 -24 -66 -59 -105 -71 -129 -40 -12 16 -14 15 -28 -18 -10 -24 -26 -41 -48 -50 -55 -22 -128 -79 -134 -105 -3 -13 -13 -24 -20 -24 -8 0 -27 -8 -42 -18 -36 -24 -60 -38 -105 -62 -39 -22 -59 -51 -39 -58 7 -2 12 -14 12 -26 0 -17 9 -24 42 -33 36 -10 45 -9 66 7 13 11 43 22 67 25 49 8 63 0 170 -91 33 -28 75 -59 93 -68 30 -16 35 -16 67 0 19 9 35 20 35 24 0 15 46 26 78 18 35 -9 41 -28 16 -49 -18 -15 -12 -49 16 -88 11 -14 25 -52 31 -84 11 -54 10 -60 -11 -89 -19 -26 -21 -38 -16 -82 4 -29 2 -64 -3 -79 -7 -18 -7 -28 1 -33 12 -8 -44 -34 -73 -34 -24 0 -24 -5 0 -39 13 -17 42 -35 84 -50 55 -19 67 -28 76 -53 l11 -30 86 7 c100 8 147 25 180 65 14 16 40 34 59 40 19 6 35 17 35 23 0 7 9 18 19 24 10 7 26 34 35 61 15 46 24 55 97 101 88 57 118 71 153 71 27 0 131 44 141 60 3 6 28 21 55 35 26 13 50 29 52 36 4 12 64 15 97 4 16 -5 20 -3 15 9 -3 9 -3 24 1 34 4 9 9 24 10 34 1 9 9 28 18 42 15 23 24 26 73 26 63 0 127 -27 145 -63 16 -30 30 -37 51 -26 10 6 27 8 37 4 12 -4 21 2 29 20 13 27 13 27 113 9 17 -3 31 2 44 16 10 11 27 20 37 20 23 0 78 27 78 39 0 5 -7 15 -16 22 -21 17 -14 122 10 148 9 10 16 22 16 28 0 6 8 9 18 7 10 -3 28 6 44 23 l27 28 -37 30 c-34 27 -45 30 -126 34 -75 3 -95 0 -131 -18 -27 -14 -45 -30 -49 -45 -9 -37 -56 -44 -96 -14 -20 15 -30 29 -27 40 8 29 -32 22 -43 -7 -5 -14 -14 -25 -20 -25 -5 0 -10 -8 -10 -17 0 -10 -6 -26 -13 -35 -17 -22 -105 -68 -130 -68 -11 0 -25 -6 -31 -14 -16 -19 -66 -30 -66 -14 0 14 -106 68 -132 68 -18 0 -58 41 -58 60 0 8 9 23 20 35 17 18 18 26 9 60 -15 52 -88 126 -118 118 -15 -4 -21 -1 -21 11 0 9 -6 16 -14 16 -8 0 -16 5 -18 12 -3 9 -12 9 -36 -1 -17 -7 -40 -10 -49 -6 -16 6 -14 9 10 21 35 19 34 57 0 62 -31 5 -29 30 2 38 29 7 34 24 7 24 -19 0 -63 -30 -100 -67 -12 -13 -29 -23 -38 -23 -13 0 -12 4 4 27 11 16 32 39 46 52 26 25 34 59 16 77 -5 5 -7 45 -3 97 l6 87 41 0 c24 0 52 8 66 17 13 10 51 32 85 48 43 21 64 39 73 61 8 16 24 34 35 40 28 12 34 50 12 74 -9 10 -15 25 -13 32 3 8 9 5 17 -10 6 -12 18 -22 26 -22 9 0 15 -13 17 -37 4 -47 32 -57 50 -18 10 23 9 33 -9 68 -30 60 -35 76 -39 137 -4 60 9 96 25 71 5 -8 12 -39 16 -69 4 -30 15 -68 26 -86 10 -17 19 -42 19 -55 0 -22 1 -23 18 -9 9 9 28 19 41 23 13 4 63 46 110 94 73 73 93 88 133 96 25 6 56 8 67 3 11 -4 34 -2 51 3 42 15 60 6 60 -31 0 -21 -11 -43 -37 -71 -35 -39 -36 -41 -13 -37 20 2 35 22 73 93 26 50 52 91 57 93 5 2 25 14 45 28 20 13 44 24 55 24 10 0 22 5 25 10 9 15 77 11 99 -5 15 -12 17 -22 12 -57 -6 -39 -5 -41 7 -23 8 11 24 50 36 87 17 50 32 75 57 96 88 72 182 93 194 42 6 -24 7 -23 35 20 16 25 43 68 61 96 l33 51 72 6 c42 4 78 12 88 21 9 8 32 14 51 13 19 -1 47 2 63 6 22 6 27 4 27 -10 1 -44 16 -41 73 12 36 33 57 61 57 75 0 12 8 34 19 48 10 15 20 39 23 54 4 23 1 27 -21 30 -29 3 -28 -2 -15 121 6 63 10 70 46 102 22 18 51 36 65 40 14 3 40 17 57 30 17 13 43 28 59 34 15 6 27 16 27 23 0 7 11 36 24 64 l24 51 178 1 c204 2 280 9 310 29 18 11 25 34 39 126 16 106 56 214 85 232 13 8 13 66 0 100 -6 15 -33 52 -60 83 -41 46 -50 63 -50 93 0 34 -3 38 -51 60 -50 24 -50 24 -45 64 11 93 21 120 43 123 12 2 31 -2 43 -8 38 -21 107 53 80 85 -14 17 -50 20 -50 4 0 -5 -4 -7 -10 -4 -5 3 -35 10 -65 15 -41 7 -63 17 -85 39 -17 16 -30 32 -30 34 0 5 58 16 101 20 38 3 55 22 68 74 13 50 57 99 104 115 15 6 27 13 27 17 0 4 -11 34 -24 67 -22 55 -27 60 -70 74 -42 14 -65 32 -66 52 0 3 16 12 35 18 19 6 37 15 40 20 11 18 -8 61 -34 74 -23 12 -36 12 -92 -1 -61 -15 -69 -15 -111 1 -42 16 -57 33 -72 79 -5 15 -19 17 -105 17 l-99 0 -32 40 c-35 44 -68 52 -87 20 -7 -11 -27 -27 -44 -36 -30 -15 -32 -15 -58 9 -14 14 -39 29 -54 33 -22 5 -27 11 -24 26 4 14 -5 26 -36 46 -28 19 -42 23 -45 14 -2 -7 -22 -12 -49 -12 -37 0 -50 5 -74 31 -16 17 -29 35 -29 40 0 5 -31 9 -70 9 -73 0 -76 -2 -60 -46 6 -14 8 -41 4 -59 -5 -29 -9 -32 -30 -26 -14 3 -33 20 -44 36 -11 17 -54 49 -102 76 l-83 46 -3 46 c-2 37 -9 51 -33 72 -17 14 -36 25 -43 25 -7 0 -21 9 -31 20 -16 18 -16 20 -1 26 9 4 16 17 16 34 0 27 -1 28 -32 19 -18 -5 -47 -9 -64 -9 -19 0 -54 -15 -93 -40 -48 -31 -71 -40 -106 -40 -35 0 -58 -9 -107 -40 -77 -50 -98 -56 -136 -36 -17 9 -49 16 -71 16 -22 0 -43 5 -46 10 -3 6 -33 28 -65 50 -74 50 -116 52 -232 9 -121 -44 -118 -43 -118 -26 0 9 -14 32 -31 51 -43 50 -50 82 -32 162 16 77 9 120 -30 183 -11 19 -24 59 -28 89 -8 58 -27 81 -67 82 -37 0 -60 17 -72 55 -22 67 -65 77 -178 39 -59 -20 -82 -18 -82 5 0 11 -13 29 -29 40 -24 17 -44 21 -110 21 -87 0 -95 6 -65 49 17 23 12 32 -20 44 -6 2 -5 15 1 33 16 44 4 91 -31 129 l-32 33 36 11 c19 6 50 20 67 31 31 19 32 22 27 67 -7 54 -38 94 -95 124 -31 15 -42 31 -68 93 -17 41 -31 81 -31 90 0 8 -10 27 -23 43 -13 15 -38 50 -56 77 -35 50 -94 86 -141 85 -14 -1 -54 -7 -89 -15z" transform="translate(0,1024) scale(0.1,-0.1)"/>
+      <g id="mapMarkers"></g>
+    </svg>
+  </div>
+  <div class="map-cities" id="mapCities"></div>
+</div></section>
+
+<!-- FOOTER -->
+<footer class="foot"><div class="fon"></div><div class="wrap">
+  <div class="foot-grid">
+    <div>
+      <img src="logo.svg" alt="Лазерхауз" class="logo">
+      <p class="foot-about">Лазерхауз — лазерна епіляція, ін'єкційна та апаратна косметологія. Сертифіковані лікарі та обладнання преміумкласу.</p>
+      <div class="socials">
+        <a href="https://instagram.com/lazerhouseukraine" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://t.me/LazerhouseKyivBot" target="_blank" rel="noopener" aria-label="Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.5 20c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.3-.1-.5-.6-.2L6 13.4l-4.8-1.5c-1-.3-1-1 .2-1.5L20.6 2.9c.9-.3 1.6.2 1.3 1.4z"/></svg></a>
+        <a href="https://facebook.com/lazerhouseukraine" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9V7c0-1 .3-1.5 1.6-1.5H18V2h-3c-3 0-4.5 1.6-4.5 4.4V9H8v4h2.5v9H14v-9h2.8l.5-4z"/></svg></a>
+        <a href="viber://pa?chatURI=lazerhouse" aria-label="Viber"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-7l-5 4v-4H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h6>Зв'язок</h6>
+      <a href="tel:+380931771611">(093) 177-16-11</a>
+      <a href="tel:+380445857007">(044) 585-70-07</a>
+      <a href="tel:+380938677524">(093) 867-75-24 · Viber</a>
+      <p class="f small" style="margin-top:5px">Щодня 9:00 – 21:00<br>без перерв та вихідних</p>
+    </div>
+    <div>
+      <h6>Локації у Києві</h6>
+      <p class="f small">VIP · вул. Басейна, 1/2-А <span style="color:var(--faint)">(Палац спорту)</span></p>
+      <p class="f small">вул. Ковпака, 17 <span style="color:var(--faint)">(Либідська)</span></p>
+      <p class="f small">вул. Володимирська, 49а <span style="color:var(--faint)">(Золоті Ворота)</span></p>
+      <p class="f small">пр-т Оболонський, 6А <span style="color:var(--faint)">(Оболонь)</span></p>
+      <p class="f small" style="color:var(--red-bright)">та ще 15 філій у Києві</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Лазерхауз. Усі права захищені.</span>
+    <span>Ліцензія МОЗ України АЕ&nbsp;#459488 від 04.09.2014</span>
+  </div>
+</div></footer>
+
+<!-- PAYMENT MODAL (TEST STUB) -->
+<div class="pay" id="pay" aria-hidden="true">
+  <div class="pay-box" role="dialog" aria-modal="true">
+    <button class="pay-x" id="payX" aria-label="Закрити">✕</button>
+    <div id="payForm">
+      <span class="pay-test">🔒 Тестовий режим</span>
+      <h3 id="payTitle">Процедура</h3>
+      <div class="sum">
+        <span class="amt" id="payAmt">0<small>грн</small></span>
+        <span class="lbl">до сплати</span>
+      </div>
+      <div class="fld">
+        <label>Ім'я та прізвище</label>
+        <input type="text" id="payName" placeholder="Олена Коваленко" autocomplete="name">
+      </div>
+      <div class="fld">
+        <label>Номер картки</label>
+        <div class="pay-card-wrap">
+          <input type="text" id="payCard" class="card" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19" autocomplete="cc-number">
+          <span class="brand" id="payBrand"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="fld">
+          <label>Термін дії</label>
+          <input type="text" id="payExp" class="card" inputmode="numeric" placeholder="ММ/РР" maxlength="5" autocomplete="cc-exp">
+        </div>
+        <div class="fld">
+          <label>CVV</label>
+          <input type="text" id="payCvv" class="card" inputmode="numeric" placeholder="•••" maxlength="4" autocomplete="cc-csc">
+        </div>
+      </div>
+      <button class="pay-submit" id="paySubmit">Сплатити <span id="paySubmitAmt"></span></button>
+      <div class="pay-secure">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        Захищене з'єднання
+      </div>
+      <p class="pay-note">Це демонстраційна форма. Реальна оплата не відбувається,<br>дані картки нікуди не передаються.</p>
+    </div>
+    <div class="pay-ok" id="payOk" style="display:none">
+      <div class="ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h3>Оплату прийнято!</h3>
+      <p>Процедуру <b id="payOkName">—</b> оформлено на ваші дані.</p>
+      <p>Очікуйте дзвінок адміністратора для запису.</p>
+      <p class="pay-note" style="margin-top:14px">(тестова оплата — реальне списання не відбулося)</p>
+    </div>
+  </div>
+</div>
+
+<!-- STICKY MOBILE BAR -->
+<div class="mbar" id="mbar"><a href="#offers" id="mbarLink">Обрати акційну пропозицію</a></div>
+
+<script>
+/* ====================================================================
+   НАЛАШТУВАННЯ АКЦІЇ — редагуйте лише цей блок
+   ==================================================================== */
+const PROMO_START = new Date('2026-06-27T10:00:00+03:00'); // старт акції (Київ)
+const PROMO_END   = new Date('2026-06-29T10:00:00+03:00'); // кінець (через 48 год)
+
+// ⬇️ ВСТАВТЕ СЮДИ РЕАЛЬНІ ПОСИЛАННЯ НА ОПЛАТУ (LiqPay / WayForPay / Fondy)
+const PAYMENT_LINKS = {
+  epil:     'https://example.com/pay/epilyaciya-gomilky',
+  botox:    'https://example.com/pay/botox-cholo',
+  morpheus: 'https://example.com/pay/morpheus8-oblychchya'
+};
+
+// ⚠️ ТЕСТ: true — кнопки «Купити» активні незалежно від дати. Перед запуском поставити false.
+const TEST_FORCE_ACTIVE = true;
+/* ==================================================================== */
+
+const $ = s => document.querySelector(s);
+const pad = n => String(n).padStart(2,'0');
+const els = {wrap:$('#timerWrap'),status:$('#timerStatus'),statusText:$('#statusText'),note:$('#timerNote'),dd:$('#dd'),hh:$('#hh'),mm:$('#mm'),ss:$('#ss')};
+const buyBtns = [...document.querySelectorAll('[data-buy]')];
+
+function setPhase(phase){
+  const active = phase === 'live' || TEST_FORCE_ACTIVE;
+  buyBtns.forEach(b=>{
+    const key = b.dataset.buy;
+    if(active){
+      b.classList.remove('locked');
+      b.setAttribute('href', PAYMENT_LINKS[key] || '#');
+      b.innerHTML = 'Купити <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+    }else{
+      b.classList.add('locked'); b.removeAttribute('href');
+      b.textContent = phase === 'before' ? 'Скоро • очікуйте' : 'Акцію завершено';
+    }
+  });
+  const mlink = $('#mbarLink');
+  if(active){ mlink.textContent = 'Купити зі знижкою →'; }
+  else if(phase==='before'){ mlink.textContent = 'Дивитись пропозиції'; }
+  else { mlink.textContent = 'Акцію завершено'; mlink.style.opacity='.6'; }
+}
+function diffParts(ms){const s=Math.max(0,Math.floor(ms/1000));return{d:Math.floor(s/86400),h:Math.floor(s%86400/3600),m:Math.floor(s%3600/60),s:s%60};}
+
+let currentPhase=null;
+function tick(){
+  const now=new Date(); let phase,target,statusTxt,note;
+  if(now<PROMO_START){phase='before';target=PROMO_START;statusTxt='До старту акції залишилось';note='Старт 27 червня о 10:00. Готуйтеся обрати свою пропозицію.';}
+  else if(now<PROMO_END){phase='live';target=PROMO_END;statusTxt='🔥 Акція триває! До завершення';note='Кількість обмежена — встигніть оформити просто зараз.';}
+  else{phase='ended';target=null;statusTxt='Акцію завершено';note='Слідкуйте за наступними пропозиціями Лазерхауз.';}
+  if(phase!==currentPhase){
+    currentPhase=phase;
+    els.wrap.classList.toggle('live',phase==='live');
+    els.status.classList.toggle('live',phase==='live');
+    els.status.classList.toggle('soon',phase==='before');
+    setPhase(phase);
+  }
+  els.statusText.textContent=statusTxt; els.note.textContent=note;
+  if(target){const p=diffParts(target-now);els.dd.textContent=pad(p.d);els.hh.textContent=pad(p.h);els.mm.textContent=pad(p.m);els.ss.textContent=pad(p.s);}
+  else{els.dd.textContent=els.hh.textContent=els.mm.textContent=els.ss.textContent='00';}
+}
+tick(); setInterval(tick,1000);
+
+const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+document.querySelectorAll('.card,.step').forEach((el,i)=>{el.style.transitionDelay=(i%3*0.1)+'s';io.observe(el);});
+
+const mbar=$('#mbar');
+new IntersectionObserver(([e])=>{mbar.classList.toggle('show',!e.isIntersecting);},{threshold:0}).observe(document.querySelector('.hero'));
+
+/* ===== ТЕСТОВА ЗАГЛУШКА ОПЛАТИ ===== */
+const pay=$('#pay'), payForm=$('#payForm'), payOk=$('#payOk');
+const payCard=$('#payCard'), payExp=$('#payExp'), payCvv=$('#payCvv'), payName=$('#payName');
+
+function openPay(card){
+  const title=card.querySelector('h3').textContent.trim();
+  const price=card.querySelector('.price .new').textContent.trim();
+  $('#payTitle').textContent=title;
+  $('#payAmt').innerHTML=price+'<small>грн</small>';
+  $('#paySubmitAmt').textContent=price+' грн';
+  $('#payOkName').textContent=title;
+  payForm.style.display=''; payOk.style.display='none';
+  payCard.value=payExp.value=payCvv.value=payName.value=''; $('#payBrand').textContent='';
+  pay.classList.add('open'); pay.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  setTimeout(()=>payName.focus(),200);
+}
+function closePay(){pay.classList.remove('open');pay.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+
+// перехоплюємо клік «Купити» у тестовому режимі
+buyBtns.forEach(b=>b.addEventListener('click',e=>{
+  if(TEST_FORCE_ACTIVE && !b.classList.contains('locked')){e.preventDefault();openPay(b.closest('.card'));}
+}));
+
+$('#payX').addEventListener('click',closePay);
+pay.addEventListener('click',e=>{if(e.target===pay)closePay();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&pay.classList.contains('open'))closePay();});
+
+// форматування полів
+payCard.addEventListener('input',()=>{
+  let v=payCard.value.replace(/\D/g,'').slice(0,16);
+  payCard.value=v.replace(/(.{4})/g,'$1 ').trim();
+  const b=v[0]; $('#payBrand').textContent = b==='4'?'VISA':(b==='5'||b==='2')?'MASTERCARD':'';
+});
+payExp.addEventListener('input',()=>{
+  let v=payExp.value.replace(/\D/g,'').slice(0,4);
+  if(v.length>=3) v=v.slice(0,2)+'/'+v.slice(2);
+  payExp.value=v;
+});
+payCvv.addEventListener('input',()=>{payCvv.value=payCvv.value.replace(/\D/g,'').slice(0,4);});
+
+$('#paySubmit').addEventListener('click',function(){
+  const digits=payCard.value.replace(/\D/g,'');
+  if(!payName.value.trim()){payName.focus();return;}
+  if(digits.length<16){payCard.focus();return;}
+  if(payExp.value.length<5){payExp.focus();return;}
+  if(payCvv.value.length<3){payCvv.focus();return;}
+  this.disabled=true; this.textContent='Обробка…';
+  setTimeout(()=>{payForm.style.display='none';payOk.style.display='';this.disabled=false;this.innerHTML='Сплатити <span id="paySubmitAmt"></span>';},900);
+});
+
+/* ===== КАРТА ЦЕНТРІВ ЛАЗЕРХАУЗ ===== */
+(function(){
+  const M=[
+   ['Київ',50.45,30.52,1],['Харків',49.99,36.23,1],['Дніпро',48.46,35.04,1],['Одеса',46.48,30.72,1],
+   ['Львів',49.84,24.03,1],['Запоріжжя',47.84,35.14,1],['Вінниця',49.23,28.47,1],['Полтава',49.59,34.55,1],
+   ['Чернігів',51.49,31.29,1],['Ужгород',48.62,22.29,1],['Суми',50.91,34.80,1],['Миколаїв',46.97,31.99,1],
+   ['Кривий Ріг',47.91,33.39,1],['Івано-Франківськ',48.92,24.71,1],['Чернівці',48.29,25.94,1],
+   ['Житомир',50.25,28.66,0],['Черкаси',49.44,32.06,0],['Тернопіль',49.55,25.59,0],['Рівне',50.62,26.25,0],
+   ['Хмельницький',49.42,26.99,0],['Кропивницький',48.51,32.26,0],['Луцьк',50.75,25.34,0],['Кременчук',49.07,33.42,0],
+   ['Камʼянське',48.51,34.60,0],['Нікополь',47.57,34.40,0],['Умань',48.75,30.22,0],['Ізмаїл',45.35,28.84,0],
+   ['Павлоград',48.53,35.87,0],['Дрогобич',49.35,23.50,0],['Стрий',49.26,23.86,0],['Самбір',49.52,23.20,0],
+   ['Коломия',48.53,25.04,0],['Бердичів',49.89,28.60,0],['Олександрія',48.67,33.12,0],['Камʼянець-Подільський',48.68,26.58,0],
+   ['Шептицький',50.39,24.23,0],['Ковель',51.21,24.71,0],['Мукачево',48.44,22.72,0],['Бориспіль',50.35,30.95,0],['Біла Церква',49.80,30.11,0]
+  ];
+  const LON_W=22.14,LON_E=40.23,LAT_N=52.38,LAT_S=44.39,NS='http://www.w3.org/2000/svg';
+  const svg=$('#uamap'),path=$('#uapath'),g=$('#mapMarkers');
+  function place(){
+    const sr=svg.getBoundingClientRect(),pr=path.getBoundingClientRect();
+    if(!sr.width||!pr.width)return;
+    const kx=1024/sr.width,ky=1024/sr.height;
+    const bx=(pr.left-sr.left)*kx,by=(pr.top-sr.top)*ky,bw=pr.width*kx,bh=pr.height*ky;
+    g.innerHTML='';
+    M.forEach(([name,lat,lon,major])=>{
+      const x=bx+(lon-LON_W)/(LON_E-LON_W)*bw, y=by+(LAT_N-lat)/(LAT_N-LAT_S)*bh;
+      const c=document.createElementNS(NS,'circle');
+      c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',major?7:4.5);
+      c.setAttribute('class','dot'+(major?' major':''));g.appendChild(c);
+      if(major){const t=document.createElementNS(NS,'text');t.setAttribute('x',x+12);t.setAttribute('y',y+6);t.setAttribute('class','mlbl');t.textContent=name;g.appendChild(t);}
+    });
+  }
+  place(); window.addEventListener('resize',place);
+  const KYIV=['Оболонь','Троєщина','Русанівка','Осокорки','Шулявка','Голосієво','Теремки','Академмістечко','Соломʼянська','Контрактова','Дружби Народів','Вокзальна','Драгоманова','Леонтовича','Басейна','Микільська','Бажана','Ковпака','Володимирська'];
+  const OTHER=['Львів · Червоної Калини','Львів · Під Дубом','Львів · Володимира Великого','Одеса · Аркадія','Одеса · Некрасова','Чернівці · Площа Філармонії','Чернівці · Героїв Майдану','Івано-Франківськ · Михайла Мулика','Івано-Франківськ · Ленкавського','Вишневе · Святошинська','Вишневе · Європейська','Ірпінь','Бровари','Вишгород','Васильків','Бориспіль','Біла Церква','Житомир','Рівне','Кропивницький','Харків','Кременчук','Хмельницький','Стрий','Кривий Ріг','Самбір','Дрогобич','Нікополь','Суми','Полтава','Умань','Чернігів','Черкаси','Вінниця','Коломия','Ужгород','Миколаїв','Бердичів','Камʼянське','Дніпро','Мукачево','Ізмаїл','Олександрія','Запоріжжя','Павлоград','Камʼянець-Подільський','Луцьк','Шептицький','Тернопіль','Ковель'];
+  const cont=$('#mapCities');
+  function grp(title,arr,kyiv){
+    const h=document.createElement('div');h.className='ct-group-title';h.innerHTML=title;cont.appendChild(h);
+    const row=document.createElement('div');row.className='ct-row';
+    arr.forEach(n=>{const s=document.createElement('span');s.className='ct'+(kyiv?' kyiv':'');s.textContent=n;row.appendChild(s);});
+    cont.appendChild(row);
+  }
+  grp('Київ — <b>19 центрів</b>',KYIV,true);
+  grp('Уся Україна',OTHER,false);
+})();
+</script>
+</body>
+</html>
