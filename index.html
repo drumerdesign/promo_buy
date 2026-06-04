@@ -69,11 +69,11 @@ section{position:relative}
   box-shadow:0 8px 30px -22px rgba(170,40,50,.35)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
 .logo{height:42px;width:auto;filter:drop-shadow(0 2px 10px rgba(226,29,40,.18));transition:.4s}
-.logo:hover{filter:drop-shadow(0 2px 16px rgba(226,29,40,.35))}
+
 .nav-cta{font-weight:700;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;color:#fff;
   background:linear-gradient(135deg,var(--red),var(--red-2));padding:11px 20px;border-radius:100px;
   text-decoration:none;white-space:nowrap;transition:.3s;box-shadow:0 4px 20px rgba(226,29,40,.3),inset 0 1px 0 rgba(255,255,255,.25)}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 26px rgba(226,29,40,.45)}
+
 @media(max-width:560px){.nav-cta{display:none}}
 
 /* ============ HERO ============ */
@@ -144,16 +144,16 @@ section{position:relative}
   box-shadow:0 30px 60px -24px rgba(170,40,50,.45),0 6px 18px -8px rgba(170,40,50,.2);
   opacity:0;transform:translateY(30px)}
 .card.in{opacity:1;transform:none}
-.card:hover{transform:translateY(-9px);box-shadow:0 40px 76px -26px rgba(170,40,50,.55),0 0 44px -14px rgba(255,120,128,.45)}
+
 .media{position:relative;height:250px;overflow:hidden;isolation:isolate}
 .media .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;
   filter:grayscale(.12) contrast(1.03) brightness(1.02);transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .55s}
-.card:hover .media .photo{transform:scale(1.06);filter:grayscale(0) contrast(1.03) brightness(1.05)}
+
 .media .tint{display:none}
 .media .shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(255,255,255,0) 50%,rgba(255,255,255,.9) 90%,#ffffff);transition:opacity .55s;pointer-events:none}
-.card:hover .media .shade{opacity:.6}
+
 .media .shine{position:absolute;top:0;left:-60%;z-index:2;width:50%;height:100%;background:linear-gradient(110deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);pointer-events:none}
-.card:hover .media .shine{animation:shine 1.1s forwards}
+
 @keyframes shine{to{left:120%}}
 .badge{position:absolute;top:13px;right:13px;z-index:3;font-family:var(--num);font-weight:700;font-size:17px;color:#fff;
   background:linear-gradient(135deg,#ff434c,var(--red-2));padding:5px 13px;border-radius:100px;
@@ -182,11 +182,11 @@ section{position:relative}
   box-shadow:0 10px 26px -8px rgba(226,29,40,.5),inset 0 1px 0 rgba(255,255,255,.25)}
 .buy::after{content:"";position:absolute;top:0;left:-100%;width:60%;height:100%;
   background:linear-gradient(110deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-20deg)}
-.buy:hover{transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(226,29,40,.6),inset 0 1px 0 rgba(255,255,255,.25)}
-.buy:hover::after{animation:shine 1s forwards}
+
+
 .buy.locked{background:rgba(36,17,20,.05);color:var(--faint);cursor:not-allowed;border:1px solid var(--line-soft);
   box-shadow:none;text-transform:none;letter-spacing:.02em;font-weight:600}
-.buy.locked::after{display:none}.buy.locked:hover{transform:none}
+.buy.locked::after{display:none}
 .buy svg{flex-shrink:0}
 .scarce{text-align:center;font-size:11.5px;color:var(--red-bright);font-weight:600;margin-top:11px}
 
@@ -252,11 +252,11 @@ section{position:relative}
 .foot-about{color:var(--muted);font-weight:300;font-size:14px;max-width:330px}
 .foot h6{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--red-bright);font-weight:700;margin-bottom:16px}
 .foot a,.foot p.f{display:block;color:var(--ink);text-decoration:none;font-size:14.5px;margin-bottom:11px;transition:.25s;font-weight:400}
-.foot a:hover{color:var(--red-bright)}
+
 .foot .small{color:var(--faint);font-size:13px;font-weight:300}
 .socials{display:flex;gap:11px;margin-top:5px}
 .socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(226,29,40,.25);display:flex;align-items:center;justify-content:center;color:var(--ink);margin:0;transition:.3s;background:rgba(255,255,255,.55)}
-.socials a:hover{background:var(--red);color:#fff;border-color:var(--red);transform:translateY(-2px)}
+
 .foot-bottom{border-top:1px solid rgba(255,255,255,.75);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--faint);font-size:12px;font-weight:300}
 
 @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
@@ -290,15 +290,28 @@ section{position:relative}
 
 /* ============ PAYMENT MODAL (TEST) ============ */
 .pay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:18px;
-  background:rgba(62,30,34,.38);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:.3s}
+  background:rgba(62,30,34,.38);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:.3s;
+  overscroll-behavior:contain}
 .pay.open{opacity:1;visibility:visible}
 .pay-box{position:relative;width:100%;max-width:430px;background:linear-gradient(180deg,#ffffff,#fff8f5);
   border:1px solid rgba(255,180,170,.55);border-radius:22px;padding:26px 24px 24px;box-shadow:0 40px 90px -30px rgba(120,40,45,.45);
-  transform:translateY(18px) scale(.98);transition:.35s cubic-bezier(.2,.8,.2,1);max-height:94vh;overflow:auto}
+  transform:translateY(18px) scale(.98);transition:.35s cubic-bezier(.2,.8,.2,1);
+  max-height:86vh;max-height:88svh;overflow-y:auto;overflow-x:hidden;
+  overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 .pay.open .pay-box{transform:none}
+/* мобільний: bottom-sheet, компактні відступи, висота від видимого екрана */
+@media(max-width:560px){
+  .pay{padding:0;align-items:flex-end}
+  .pay-box{max-width:none;border-radius:20px 20px 0 0;padding:20px 16px calc(16px + env(safe-area-inset-bottom));
+    max-height:92svh;transform:translateY(40px)}
+  .pay h3{font-size:20px}
+  .pay .sum{margin-bottom:14px;padding-bottom:12px}
+  .pay .fld{margin-bottom:11px}
+  .pay-qty{margin-bottom:14px;padding:8px 12px}
+}
 .pay-x{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line-soft);
   background:rgba(36,17,20,.04);color:var(--muted);font-size:18px;line-height:1;cursor:pointer;transition:.25s}
-.pay-x:hover{background:var(--red);color:#fff;border-color:var(--red)}
+
 .pay-test{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
   color:var(--red-2);background:var(--red-soft);border:1px solid rgba(255,120,128,.35);padding:5px 11px;border-radius:100px;margin-bottom:14px}
 .pay h3{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.15;margin-bottom:4px}
@@ -315,10 +328,11 @@ section{position:relative}
 .pay input:focus{border-color:var(--red);background:rgba(226,29,40,.04);box-shadow:0 0 0 3px rgba(226,29,40,.1)}
 .pay input.invalid{border-color:var(--red);background:rgba(226,29,40,.05)}
 /* title row + availability */
-.pay-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:4px;padding-right:28px}
+.pay-title-row{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:8px 10px;margin-bottom:4px;padding-right:28px}
+.pay-title-row h3{flex:1 1 auto;min-width:0}
 .pay-avail-btn{flex-shrink:0;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;cursor:pointer;
   color:var(--red-2);background:var(--red-soft);border:1px solid rgba(255,120,128,.35);padding:6px 11px;border-radius:100px;transition:.25s;white-space:nowrap}
-.pay-avail-btn:hover{background:var(--red);color:#fff;border-color:var(--red)}
+
 .pay-avail{display:none;margin:10px 0 6px;padding:12px 14px;border:1px solid rgba(255,120,128,.35);border-radius:13px;
   background:linear-gradient(135deg,rgba(255,67,76,.06),rgba(255,180,160,.1));font-size:12.5px;line-height:1.55;color:var(--ink)}
 .pay-avail.open{display:block}
@@ -328,13 +342,13 @@ section{position:relative}
 .pay-check{display:flex;align-items:flex-start;gap:10px;margin:4px 0 12px;font-size:12.5px;color:var(--muted);line-height:1.45;cursor:pointer}
 .pay-check input{width:18px;height:18px;flex-shrink:0;margin-top:1px;accent-color:var(--red);cursor:pointer}
 .pay-check a{color:var(--red-2);font-weight:600;text-decoration:underline}
-.pay-check a:hover{color:var(--red)}
+
 .pay-check.invalid{color:var(--red-2)}
 .pay-submit{margin-top:8px;width:100%;display:flex;align-items:center;justify-content:center;gap:9px;
   font-weight:800;font-size:16px;letter-spacing:.05em;text-transform:uppercase;color:#fff;
   background:linear-gradient(135deg,#ff434c,var(--red) 45%,var(--red-2));border:none;border-radius:13px;padding:16px;cursor:pointer;transition:.3s;
   box-shadow:0 10px 26px -8px rgba(226,29,40,.5),inset 0 1px 0 rgba(255,255,255,.25)}
-.pay-submit:hover{transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(226,29,40,.6)}
+
 .pay-submit:disabled{opacity:.6;cursor:default;transform:none;box-shadow:none}
 .pay-note{font-size:11.5px;color:var(--faint);text-align:center;margin-top:14px;line-height:1.5}
 .pay-secure{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px;color:var(--muted);margin-top:10px}
@@ -347,10 +361,30 @@ section{position:relative}
 .pay-qty .qctrl{display:flex;align-items:center;gap:14px}
 .pay-qty button{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,120,128,.5);cursor:pointer;
   background:#fff;color:var(--red);font-size:19px;line-height:1;font-weight:700;transition:.2s;display:flex;align-items:center;justify-content:center}
-.pay-qty button:hover{background:var(--red);color:#fff;border-color:var(--red)}
+
 .pay-qty button:disabled{opacity:.35;cursor:default;background:#fff;color:var(--red);border-color:rgba(255,120,128,.5)}
 .pay-qty .qn{font-family:var(--num);font-weight:700;font-size:22px;min-width:26px;text-align:center;color:var(--ink)}
 
+/* hover-ефекти лише для пристроїв з курсором — на тачі вони
+   змушують натискати двічі (перший тап = hover) */
+@media(hover:hover) and (pointer:fine){
+.logo:hover{filter:drop-shadow(0 2px 16px rgba(226,29,40,.35))}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 26px rgba(226,29,40,.45)}
+.card:hover{transform:translateY(-9px);box-shadow:0 40px 76px -26px rgba(170,40,50,.55),0 0 44px -14px rgba(255,120,128,.45)}
+.card:hover .media .photo{transform:scale(1.06);filter:grayscale(0) contrast(1.03) brightness(1.05)}
+.card:hover .media .shade{opacity:.6}
+.card:hover .media .shine{animation:shine 1.1s forwards}
+.buy:hover{transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(226,29,40,.6),inset 0 1px 0 rgba(255,255,255,.25)}
+.buy:hover::after{animation:shine 1s forwards}
+.buy.locked:hover{transform:none}
+.foot a:hover{color:var(--red-bright)}
+.socials a:hover{background:var(--red);color:#fff;border-color:var(--red);transform:translateY(-2px)}
+.pay-x:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.pay-avail-btn:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.pay-check a:hover{color:var(--red)}
+.pay-submit:hover{transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(226,29,40,.6)}
+.pay-qty button:hover{background:var(--red);color:#fff;border-color:var(--red)}
+}
 </style>
 </head>
 <body>
@@ -733,10 +767,22 @@ function openPay(card){
   payOferta.checked=false; $('#payOfertaWrap').classList.remove('invalid');
   const sb=$('#paySubmit'); sb.disabled=false; sb.innerHTML='Купити · <span id="paySubmitAmt"></span>'; renderAmount();
   pay.classList.add('open'); pay.setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';
-  setTimeout(()=>payFirstname.focus(),200);
+  lockScroll();
+  // автофокус лише на пристроях з клавіатурою — на мобільному він
+  // одразу відкриває клавіатуру і ламає розкладку bottom-sheet
+  if(window.matchMedia('(hover:hover)').matches) setTimeout(()=>payFirstname.focus(),200);
 }
-function closePay(){pay.classList.remove('open');pay.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+/* iOS не поважає overflow:hidden на body — лочимо через position:fixed */
+let _lockY=0;
+function lockScroll(){
+  _lockY=window.scrollY;
+  Object.assign(document.body.style,{position:'fixed',top:(-_lockY)+'px',left:'0',right:'0',width:'100%',overflow:'hidden'});
+}
+function unlockScroll(){
+  Object.assign(document.body.style,{position:'',top:'',left:'',right:'',width:'',overflow:''});
+  window.scrollTo({top:_lockY,left:0,behavior:'instant'});
+}
+function closePay(){pay.classList.remove('open');pay.setAttribute('aria-hidden','true');unlockScroll();}
 
 // «Купити» в картці відкриває форму оформлення (коли акція активна)
 buyBtns.forEach(b=>b.addEventListener('click',e=>{
