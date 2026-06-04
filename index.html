@@ -49,10 +49,12 @@ body{color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;o
   -webkit-mask-image:radial-gradient(70% 68% at 50% 50%,#000 32%,transparent 74%);
   mask-image:radial-gradient(70% 68% at 50% 50%,#000 32%,transparent 74%)}
 @media(max-width:560px){.foot .fon{width:120%}}
-.orb{position:absolute;border-radius:50%;filter:blur(95px);opacity:.5;mix-blend-mode:normal}
-.orb.a{width:42vw;height:42vw;top:-16vw;left:-12vw;background:radial-gradient(circle,rgba(255,130,125,.3),transparent 70%);animation:float 22s ease-in-out infinite}
-.orb.b{width:40vw;height:40vw;bottom:-18vw;right:-10vw;background:radial-gradient(circle,rgba(255,175,140,.35),transparent 70%);animation:float 28s ease-in-out infinite reverse}
-.orb.c{width:28vw;height:28vw;top:46%;left:60%;background:radial-gradient(circle,rgba(255,67,76,.12),transparent 70%);animation:float 26s ease-in-out infinite}
+/* Перф: без filter:blur — м'якість дає сам radial-gradient; анімація лише
+   transform (компонується на GPU без перерахунку розмиття щокадру). */
+.orb{position:absolute;border-radius:50%;opacity:.5;will-change:transform}
+.orb.a{width:42vw;height:42vw;top:-16vw;left:-12vw;background:radial-gradient(circle,rgba(255,130,125,.3),rgba(255,130,125,.12) 45%,transparent 72%);animation:float 22s ease-in-out infinite}
+.orb.b{width:40vw;height:40vw;bottom:-18vw;right:-10vw;background:radial-gradient(circle,rgba(255,175,140,.35),rgba(255,175,140,.14) 45%,transparent 72%);animation:float 28s ease-in-out infinite reverse}
+.orb.c{width:28vw;height:28vw;top:46%;left:60%;background:radial-gradient(circle,rgba(255,67,76,.12),rgba(255,67,76,.05) 45%,transparent 72%);animation:float 26s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(4vw,5vw)}}
 .grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.025;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
@@ -62,7 +64,7 @@ body{color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;o
 section{position:relative}
 
 /* ============ NAV ============ */
-.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
   background:linear-gradient(180deg,rgba(253,248,245,.95),rgba(253,248,245,.62));border-bottom:1px solid rgba(255,255,255,.75);
   box-shadow:0 8px 30px -22px rgba(170,40,50,.35)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
@@ -92,7 +94,7 @@ section{position:relative}
 .hero-sub b{color:var(--ink);font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:18px;opacity:0;animation:rise 1s .65s forwards}
 .chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:500;padding:8px 15px;border-radius:100px;
-  border:1px solid var(--glass-border);background:var(--glass);color:var(--ink);backdrop-filter:blur(6px);box-shadow:var(--shadow-warm)}
+  border:1px solid var(--glass-border);background:var(--glass);color:var(--ink);box-shadow:var(--shadow-warm)}
 .chip b{color:var(--red);font-weight:700}
 
 /* ============ COUNTDOWN ============ */
@@ -106,7 +108,7 @@ section{position:relative}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(226,29,40,.45)}70%{box-shadow:0 0 0 12px rgba(226,29,40,0)}100%{box-shadow:0 0 0 0 rgba(226,29,40,0)}}
 .clock{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .unit{position:relative;background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;
-  padding:14px 6px 11px;backdrop-filter:blur(10px);overflow:hidden;box-shadow:var(--shadow-warm)}
+  padding:14px 6px 11px;overflow:hidden;box-shadow:var(--shadow-warm)}
 .unit::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent 60%)}
 .unit .num{font-family:var(--num);font-weight:600;font-size:clamp(34px,8vw,52px);line-height:1;color:var(--ink);
   font-variant-numeric:tabular-nums;letter-spacing:.01em;position:relative}
@@ -278,7 +280,7 @@ section{position:relative}
 
 /* sticky mobile buy bar */
 .mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:11px 16px calc(11px + env(safe-area-inset-bottom));
-  background:linear-gradient(180deg,rgba(253,248,245,.55),rgba(253,248,245,.97));backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.8);
+  background:linear-gradient(180deg,rgba(253,248,245,.82),rgba(253,248,245,.98));border-top:1px solid rgba(255,255,255,.8);
   box-shadow:0 -10px 30px -18px rgba(170,40,50,.35);transform:translateY(120%);transition:.4s;display:none}
 .mbar.show{transform:none}
 .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font-weight:800;font-size:15px;
