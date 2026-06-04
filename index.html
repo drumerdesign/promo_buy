@@ -34,16 +34,18 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;position:relative}
+/* Перф: на body лише дешевий лінійний градієнт. Радіальні «перламутрові»
+   переливи живуть у .bg-fx (100vh зверху) — інакше вони розтягуються на всю
+   висоту документа і растеризуються тайлами при кожному скролі. */
 body{color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased;
-  background:
-    radial-gradient(90% 60% at 15% 0%,rgba(255,196,182,.4),transparent 60%),
-    radial-gradient(80% 50% at 90% 12%,rgba(255,154,163,.25),transparent 55%),
-    radial-gradient(100% 70% at 50% 105%,rgba(255,183,167,.35),transparent 60%),
-    linear-gradient(180deg,#fdf8f5,#fbf1ec 55%,#f9ece6);
+  background:linear-gradient(180deg,#fdf8f5,#fbf1ec 55%,#f9ece6);
   background-color:var(--bg)}
 
 /* ============ ATMOSPHERE ============ */
-.bg-fx{position:absolute;top:0;left:0;right:0;height:100vh;z-index:-2;pointer-events:none;overflow:hidden}
+.bg-fx{position:absolute;top:0;left:0;right:0;height:100vh;z-index:-2;pointer-events:none;overflow:hidden;
+  background:
+    radial-gradient(90% 80% at 15% 0%,rgba(255,196,182,.4),transparent 60%),
+    radial-gradient(80% 70% at 90% 8%,rgba(255,154,163,.25),transparent 55%)}
 .foot .fon{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:min(820px,94%);aspect-ratio:1697/927;
   background:url(fon.png) center/contain no-repeat;mix-blend-mode:multiply;opacity:.12;filter:brightness(1.05) saturate(1);pointer-events:none;z-index:0;
   -webkit-mask-image:radial-gradient(70% 68% at 50% 50%,#000 32%,transparent 74%);
@@ -56,8 +58,6 @@ body{color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;o
 .orb.a{width:42vw;height:42vw;top:-16vw;left:-12vw;background:radial-gradient(circle,rgba(255,130,125,.3),rgba(255,130,125,.12) 45%,transparent 72%)}
 .orb.b{width:40vw;height:40vw;bottom:-18vw;right:-10vw;background:radial-gradient(circle,rgba(255,175,140,.35),rgba(255,175,140,.14) 45%,transparent 72%)}
 .orb.c{width:28vw;height:28vw;top:46%;left:60%;background:radial-gradient(circle,rgba(255,67,76,.12),rgba(255,67,76,.05) 45%,transparent 72%)}
-.grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.025;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
 /* ============ SHELL ============ */
 .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
@@ -356,7 +356,6 @@ section{position:relative}
 <body>
 
 <div class="bg-fx"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
-<div class="grain"></div>
 
 <!-- NAV -->
 <nav class="nav"><div class="wrap nav-in">
@@ -582,9 +581,15 @@ section{position:relative}
           <button type="button" id="qtyPlus" aria-label="Більше">+</button>
         </div>
       </div>
-      <div class="fld">
-        <label>Ваше прізвище</label>
-        <input type="text" id="paySurname" placeholder="Коваленко" autocomplete="family-name">
+      <div class="row">
+        <div class="fld">
+          <label>Ваше ім'я</label>
+          <input type="text" id="payFirstname" placeholder="Олена" autocomplete="given-name">
+        </div>
+        <div class="fld">
+          <label>Ваше прізвище</label>
+          <input type="text" id="paySurname" placeholder="Коваленко" autocomplete="family-name">
+        </div>
       </div>
       <div class="fld">
         <label>Ваш номер телефону</label>
@@ -686,7 +691,7 @@ new IntersectionObserver(([e])=>{mbar.classList.toggle('show',!e.isIntersecting)
 
 /* ===== ОФОРМЛЕННЯ ПОКУПКИ (лід-форма -> платіжна система) ===== */
 const pay=$('#pay'), payForm=$('#payForm');
-const paySurname=$('#paySurname'), payPhone=$('#payPhone'), payCity=$('#payCity'), payEmail=$('#payEmail'), payOferta=$('#payOferta');
+const payFirstname=$('#payFirstname'), paySurname=$('#paySurname'), payPhone=$('#payPhone'), payCity=$('#payCity'), payEmail=$('#payEmail'), payOferta=$('#payOferta');
 
 // Де доступна процедура (за даними laserhouse.com.ua, перевірено 2026-06-04)
 const CITIES_INJ = 'Київ (усі центри, вкл. VIP), Харків, Дніпро, Одеса, Львів, Вінниця, Чернівці, Черкаси, Суми, Миколаїв';
@@ -724,12 +729,12 @@ function openPay(card){
   $('#availList').innerHTML=AVAILABILITY[currentOffer]||'Уточнюйте за телефоном.';
   $('#availPanel').classList.remove('open');
   renderAmount();
-  [paySurname,payPhone,payCity,payEmail].forEach(i=>{i.value='';i.classList.remove('invalid');});
+  [payFirstname,paySurname,payPhone,payCity,payEmail].forEach(i=>{i.value='';i.classList.remove('invalid');});
   payOferta.checked=false; $('#payOfertaWrap').classList.remove('invalid');
   const sb=$('#paySubmit'); sb.disabled=false; sb.innerHTML='Купити · <span id="paySubmitAmt"></span>'; renderAmount();
   pay.classList.add('open'); pay.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
-  setTimeout(()=>paySurname.focus(),200);
+  setTimeout(()=>payFirstname.focus(),200);
 }
 function closePay(){pay.classList.remove('open');pay.setAttribute('aria-hidden','true');document.body.style.overflow='';}
 
@@ -747,8 +752,9 @@ payPhone.addEventListener('input',()=>{payPhone.value=payPhone.value.replace(/[^
 
 function _bad(el){el.classList.add('invalid');el.focus();return false;}
 function validateLead(){
-  [paySurname,payPhone,payCity,payEmail].forEach(i=>i.classList.remove('invalid'));
+  [payFirstname,paySurname,payPhone,payCity,payEmail].forEach(i=>i.classList.remove('invalid'));
   $('#payOfertaWrap').classList.remove('invalid');
+  if(!payFirstname.value.trim()) return _bad(payFirstname);
   if(!paySurname.value.trim()) return _bad(paySurname);
   if(payPhone.value.replace(/\D/g,'').length<10) return _bad(payPhone);
   if(!payCity.value.trim()) return _bad(payCity);
@@ -765,7 +771,8 @@ $('#paySubmit').addEventListener('click',function(){
   // і приберіть setTimeout-заглушку.
   const params=new URLSearchParams({
     offer:currentOffer, qty:qty, amount:unitPrice*qty,
-    surname:paySurname.value.trim(), phone:payPhone.value.trim(),
+    name:payFirstname.value.trim(), surname:paySurname.value.trim(),
+    phone:payPhone.value.trim(),
     city:payCity.value.trim(), email:payEmail.value.trim(),
   });
   const target=(PAYMENT_LINKS[currentOffer]||'#')+'?'+params.toString();
