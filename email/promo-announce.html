@@ -10,8 +10,11 @@
   1. COUNTDOWN_GIF_URL — згенерувати живий GIF-таймер (безкоштовно):
      https://sendtric.com → дата 2026-06-27 10:00 (Europe/Kyiv),
      мова UA, колір фону #fdf8f5, цифри #241114, акцент #e21d28.
-  2. LANDING_URL — посилання на сторінку акції (2 місця: кнопка + фолбек).
+  2. LANDING_URL — посилання на сторінку акції.
   3. UNSUBSCRIBE_URL — посилання відписки вашого сервісу розсилки.
+  4. Фото: *-card.jpg лежать поруч у папці email/ (вже кадровані 360x220,
+     без object-fit — він не працює в Outlook). Перед відправкою замінити
+     відносні src на АБСОЛЮТНІ URL хостингу — у листах відносні шляхи не працюють.
   ════════════════════════════════════════════════════════════════
 -->
 </head>
@@ -50,10 +53,23 @@
 
         <tr><td align="center" style="padding:16px 40px 0;">
           <span style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.6;color:#8a7a76;">
-            <b style="color:#241114;">27 червня о 10:00</b> стартує акція на
-            <b style="color:#241114;">три ТОПові процедури</b> Лазерхауз за спеціальними цінами.
-            Кількість акційних пропозицій обмежена, дія акції — лише 2 дні.
+            Стартує акція на <b style="color:#241114;">три ТОПові процедури</b> Лазерхауз
+            за спеціальними цінами. Кількість акційних пропозицій обмежена,
+            дія акції — лише 2 дні.
           </span>
+        </td></tr>
+
+        <!-- BIG START DATE -->
+        <tr><td align="center" style="padding:24px 28px 0;">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td align="center" style="background-color:#fdf2f0;border:1px solid #f3d8d4;border-radius:18px;padding:18px 34px;">
+                <span style="font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:#a8131b;text-transform:uppercase;">Старт акції</span><br>
+                <span style="font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:1.1;font-weight:bold;color:#241114;">27&nbsp;червня</span><br>
+                <span style="font-family:Georgia,'Times New Roman',serif;font-size:34px;line-height:1.2;font-style:italic;color:#e21d28;">о 10:00</span>
+              </td>
+            </tr>
+          </table>
         </td></tr>
 
         <!-- SECRET TEASER -->
@@ -61,26 +77,35 @@
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
             <tr>
               <td width="33%" align="center" style="padding:4px;">
-                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fdf2f0;border:1px dashed #e8a8ab;border-radius:14px;">
-                  <tr><td align="center" style="padding:18px 6px;">
-                    <span style="font-family:Georgia,serif;font-size:34px;color:#e21d28;font-weight:bold;">?</span><br>
-                    <span style="font-family:Arial,Helvetica,sans-serif;font-size:10.5px;letter-spacing:1px;color:#b09a93;text-transform:uppercase;">Процедура&nbsp;1</span>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fdf2f0;border:1px solid #f3d8d4;border-radius:14px;">
+                  <tr><td style="padding:5px 5px 0;">
+                    <img src="epil-card.jpg" width="172" alt="Секретна процедура 1" style="display:block;width:100%;height:auto;border:0;border-radius:10px;">
+                  </td></tr>
+                  <tr><td align="center" style="padding:9px 6px 12px;">
+                    <span style="font-family:Georgia,serif;font-size:22px;color:#e21d28;font-weight:bold;">?</span>&nbsp;
+                    <span style="font-family:Arial,Helvetica,sans-serif;font-size:10.5px;letter-spacing:1px;color:#b09a93;text-transform:uppercase;">Секрет</span>
                   </td></tr>
                 </table>
               </td>
               <td width="33%" align="center" style="padding:4px;">
-                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fdf2f0;border:1px dashed #e8a8ab;border-radius:14px;">
-                  <tr><td align="center" style="padding:18px 6px;">
-                    <span style="font-family:Georgia,serif;font-size:34px;color:#e21d28;font-weight:bold;">?</span><br>
-                    <span style="font-family:Arial,Helvetica,sans-serif;font-size:10.5px;letter-spacing:1px;color:#b09a93;text-transform:uppercase;">Процедура&nbsp;2</span>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fdf2f0;border:1px solid #f3d8d4;border-radius:14px;">
+                  <tr><td style="padding:5px 5px 0;">
+                    <img src="botox-card.jpg" width="172" alt="Секретна процедура 2" style="display:block;width:100%;height:auto;border:0;border-radius:10px;">
+                  </td></tr>
+                  <tr><td align="center" style="padding:9px 6px 12px;">
+                    <span style="font-family:Georgia,serif;font-size:22px;color:#e21d28;font-weight:bold;">?</span>&nbsp;
+                    <span style="font-family:Arial,Helvetica,sans-serif;font-size:10.5px;letter-spacing:1px;color:#b09a93;text-transform:uppercase;">Секрет</span>
                   </td></tr>
                 </table>
               </td>
               <td width="33%" align="center" style="padding:4px;">
-                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fdf2f0;border:1px dashed #e8a8ab;border-radius:14px;">
-                  <tr><td align="center" style="padding:18px 6px;">
-                    <span style="font-family:Georgia,serif;font-size:34px;color:#e21d28;font-weight:bold;">?</span><br>
-                    <span style="font-family:Arial,Helvetica,sans-serif;font-size:10.5px;letter-spacing:1px;color:#b09a93;text-transform:uppercase;">Процедура&nbsp;3</span>
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fdf2f0;border:1px solid #f3d8d4;border-radius:14px;">
+                  <tr><td style="padding:5px 5px 0;">
+                    <img src="morpheus-card.jpg" width="172" alt="Секретна процедура 3" style="display:block;width:100%;height:auto;border:0;border-radius:10px;">
+                  </td></tr>
+                  <tr><td align="center" style="padding:9px 6px 12px;">
+                    <span style="font-family:Georgia,serif;font-size:22px;color:#e21d28;font-weight:bold;">?</span>&nbsp;
+                    <span style="font-family:Arial,Helvetica,sans-serif;font-size:10.5px;letter-spacing:1px;color:#b09a93;text-transform:uppercase;">Секрет</span>
                   </td></tr>
                 </table>
               </td>
@@ -107,7 +132,7 @@
         </td></tr>
         <tr><td align="center" style="padding:2px 28px 0;">
           <span style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#b09a93;">
-            Старт — <b style="color:#e21d28;">27 червня, 10:00</b> &nbsp;•&nbsp; Завершення — 29 червня, 10:00
+            Дія акції: <b style="color:#e21d28;">27.06, 10:00</b> — 29.06, 10:00 &nbsp;(лише 2 дні)
           </span>
         </td></tr>
 
