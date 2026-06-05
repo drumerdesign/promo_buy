@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Оплату прийнято — Лазерхауз</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#241114;
+  --muted:#8a7a76;
+  --faint:#b09a93;
+  --red:#e21d28;
+  --red-2:#a8131b;
+  --green:#1d9d4e;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Manrope",system-ui,sans-serif;
+  --num:"Oswald","Manrope",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:24px 18px;color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(90% 80% at 15% 0%,rgba(255,196,182,.4),transparent 60%),
+    radial-gradient(80% 70% at 90% 8%,rgba(255,154,163,.25),transparent 55%),
+    linear-gradient(180deg,#fdf8f5,#fbf1ec 60%,#f9ece6)}
+.logo{height:40px;margin-bottom:26px;filter:drop-shadow(0 2px 10px rgba(226,29,40,.18))}
+.box{width:100%;max-width:460px;border:1.5px solid transparent;border-radius:24px;text-align:center;
+  background:linear-gradient(180deg,#ffffff,#fff8f5) padding-box,
+             linear-gradient(150deg,#ffd3cd,#fff 30%,#ffb9b3 60%,#ff8d96 90%) border-box;
+  box-shadow:0 30px 60px -24px rgba(170,40,50,.45),0 6px 18px -8px rgba(170,40,50,.2);
+  padding:38px 28px 30px}
+.ok{width:84px;height:84px;border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;
+  color:#fff;background:linear-gradient(135deg,#34c46c,var(--green));
+  box-shadow:0 14px 34px -10px rgba(29,157,78,.55),inset 0 1px 0 rgba(255,255,255,.35);
+  animation:pop .55s cubic-bezier(.2,1.3,.4,1)}
+@keyframes pop{0%{transform:scale(.4);opacity:0}100%{transform:scale(1);opacity:1}}
+h1{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.05;margin-bottom:10px}
+.sub{color:var(--muted);font-weight:300;font-size:15.5px;max-width:340px;margin:0 auto}
+.details{display:none;margin:22px auto 0;padding:14px 16px;border-radius:14px;text-align:left;font-size:13.5px;
+  background:linear-gradient(135deg,rgba(255,67,76,.07),rgba(255,180,160,.12));border:1px solid rgba(255,120,128,.35)}
+.details.show{display:block}
+.details .row{display:flex;justify-content:space-between;gap:12px;padding:3px 0}
+.details .k{color:var(--muted)}
+.details .v{font-weight:600;text-align:right}
+.details .v.amt{font-family:var(--num);font-size:16px;color:var(--red-2)}
+.next{margin-top:22px;padding-top:18px;border-top:1px solid rgba(36,17,20,.08);color:var(--muted);font-size:13.5px;font-weight:300}
+.next b{color:var(--ink);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:22px;
+  font-weight:800;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;color:#fff;text-decoration:none;
+  background:linear-gradient(135deg,#ff434c,var(--red) 45%,var(--red-2));border-radius:100px;padding:15px 34px;
+  box-shadow:0 10px 26px -8px rgba(226,29,40,.5),inset 0 1px 0 rgba(255,255,255,.25);transition:.3s}
+@media(hover:hover){.btn:hover{transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(226,29,40,.6)}}
+.phone{margin-top:16px;font-size:13px;color:var(--muted)}
+.phone a{color:var(--red-2);font-weight:700;text-decoration:none}
+.foot{margin-top:26px;font-size:11.5px;color:var(--faint)}
+</style>
+</head>
+<body>
+
+<img src="logo.svg" alt="Лазерхауз" class="logo">
+
+<div class="box">
+  <div class="ok">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+  </div>
+  <h1>Оплату прийнято!</h1>
+  <p class="sub">Дякуємо за покупку. Вашу процедуру оформлено — підтвердження вже надіслано на ваш імейл.</p>
+
+  <div class="details" id="details">
+    <div class="row" id="rowProc" style="display:none"><span class="k">Процедура</span><span class="v" id="vProc"></span></div>
+    <div class="row" id="rowName" style="display:none"><span class="k">Покупець</span><span class="v" id="vName"></span></div>
+    <div class="row" id="rowQty" style="display:none"><span class="k">Кількість</span><span class="v" id="vQty"></span></div>
+    <div class="row" id="rowAmt" style="display:none"><span class="k">Сплачено</span><span class="v amt" id="vAmt"></span></div>
+  </div>
+
+  <p class="next">Найближчим часом з вами зв'яжеться адміністратор<br>для <b>запису на зручний час</b>. Нікуди йти не треба 🙂</p>
+
+  <a class="btn" href="index.html">На головну</a>
+  <p class="phone">Питання? Телефонуйте: <a href="tel:+380931771611">(093) 177-16-11</a></p>
+</div>
+
+<p class="foot">© 2026 Лазерхауз. Усі права захищені.</p>
+
+<script>
+// Якщо платіжна система повертає наші параметри в URL — показуємо деталі.
+// Працює і без них: просто загальне підтвердження.
+(function(){
+  const q = new URLSearchParams(location.search);
+  const OFFERS = {epil:"Лазерна епіляція — гомілки з колінами (жіночі)",
+                  botox:"Ін'єкції ботоксу — зморшки чола",
+                  morpheus:"RF-ліфтинг Morpheus8 — обличчя + шия"};
+  const esc = s => {const d=document.createElement('div');d.textContent=s;return d.textContent;};
+  let any = false;
+  function show(rowId, valId, text){
+    if(!text) return;
+    document.getElementById(rowId).style.display='flex';
+    document.getElementById(valId).textContent = text;
+    any = true;
+  }
+  show('rowProc','vProc', OFFERS[q.get('offer')] || '');
+  const fullName = [q.get('name'), q.get('surname')].filter(Boolean).join(' ');
+  show('rowName','vName', esc(fullName));
+  const qty = parseInt(q.get('qty')||'',10);
+  if(qty > 1) show('rowQty','vQty', qty + ' шт.');
+  const amount = parseInt(q.get('amount')||'',10);
+  if(amount > 0) show('rowAmt','vAmt', amount.toLocaleString('uk-UA') + ' грн');
+  if(any) document.getElementById('details').classList.add('show');
+})();
+</script>
+</body>
+</html>
