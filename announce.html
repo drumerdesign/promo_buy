@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лазерхауз — секретна акція стартує 27 червня о 10:00</title>
+<meta name="description" content="Три ТОПові процедури Лазерхауз за цінами, яких більше не буде. Які саме — секрет до 27 червня, 10:00. Дія акції — лише 2 дні.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdf8f5;
+  --ink:#241114;
+  --muted:#8a7a76;
+  --faint:#b09a93;
+  --red:#e21d28;
+  --red-2:#a8131b;
+  --red-bright:#e8242f;
+  --coral:#ff7a64;
+  --peach:#ffb199;
+  --red-soft:rgba(226,29,40,.08);
+  --line-soft:rgba(36,17,20,.08);
+  --glass:linear-gradient(160deg,rgba(255,255,255,.92),rgba(255,244,240,.65));
+  --glass-border:rgba(255,255,255,.9);
+  --shadow-warm:0 10px 26px -14px rgba(190,80,80,.25);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Manrope",system-ui,sans-serif;
+  --num:"Oswald","Manrope",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;position:relative}
+body{color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  background:linear-gradient(180deg,#fdf8f5,#fbf1ec 55%,#f9ece6)}
+.bg-fx{position:absolute;top:0;left:0;right:0;height:100vh;z-index:-2;pointer-events:none;overflow:hidden;
+  background:
+    radial-gradient(90% 80% at 15% 0%,rgba(255,196,182,.4),transparent 60%),
+    radial-gradient(80% 70% at 90% 8%,rgba(255,154,163,.25),transparent 55%)}
+.orb{position:absolute;border-radius:50%;opacity:.5}
+.orb.a{width:42vw;height:42vw;top:-16vw;left:-12vw;background:radial-gradient(circle,rgba(255,130,125,.3),rgba(255,130,125,.12) 45%,transparent 72%)}
+.orb.b{width:40vw;height:40vw;bottom:-18vw;right:-10vw;background:radial-gradient(circle,rgba(255,175,140,.35),rgba(255,175,140,.14) 45%,transparent 72%)}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+
+.nav{position:sticky;top:0;z-index:50;
+  background:linear-gradient(180deg,rgba(253,248,245,.98),rgba(253,247,244,.92));border-bottom:1px solid rgba(255,255,255,.75);
+  box-shadow:0 8px 30px -22px rgba(170,40,50,.35)}
+.nav-in{display:flex;align-items:center;justify-content:center;height:74px}
+.logo{height:42px;width:auto;filter:drop-shadow(0 2px 10px rgba(226,29,40,.18))}
+
+.hero{padding:44px 0 20px;text-align:center}
+.eyebrow{font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--red-bright);font-weight:700;margin-bottom:14px}
+.hero h1{font-family:var(--serif);font-weight:600;line-height:.92;letter-spacing:-.01em;font-size:clamp(46px,9vw,96px)}
+.hero h1 .l1{display:block;background:linear-gradient(180deg,#2a1216,#52242b);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .l2{display:block;font-style:italic;font-weight:500;font-size:.52em;line-height:1.04;margin-top:2px;
+  background:linear-gradient(115deg,#241114 5%,var(--red) 45%,var(--coral) 75%,var(--peach));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{max-width:560px;margin:16px auto 0;color:var(--muted);font-size:clamp(15px,2.2vw,18px);font-weight:300}
+.hero-sub b{color:var(--ink);font-weight:600}
+
+/* big start */
+.start-box{display:inline-block;margin-top:24px;border:1.5px solid transparent;border-radius:20px;padding:18px 38px;
+  background:linear-gradient(180deg,#fffdfc,#fef4f0) padding-box,
+             linear-gradient(140deg,#ffd3cd,#fff 35%,#ffaeb4 65%,#ff8d96) border-box;
+  box-shadow:0 22px 46px -22px rgba(170,40,50,.4)}
+.start-box .lbl{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--red-2);font-weight:700}
+.start-box .date{font-family:var(--serif);font-weight:600;font-size:clamp(36px,6vw,54px);line-height:1.05}
+.start-box .time{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(22px,3.5vw,32px);color:var(--red)}
+.start-box .dur{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--red-2);font-weight:700;margin-top:6px}
+
+/* email capture */
+.notify{max-width:520px;margin:26px auto 0;border:1.5px solid transparent;border-radius:18px;padding:20px 22px;
+  background:linear-gradient(135deg,rgba(255,67,76,.09),rgba(255,255,255,.9) 40%,rgba(255,180,160,.16)) padding-box,
+             linear-gradient(140deg,#ff8d96,#ffd3cd 40%,#fff 60%,#ffaeb4) border-box;
+  box-shadow:0 24px 50px -24px rgba(170,40,50,.45)}
+.notify .nt{font-weight:700;font-size:15.5px}
+.notify .nt b{color:var(--red)}
+.notify .ns{font-size:12.5px;color:var(--muted);font-weight:300;margin-top:3px}
+.notify-row{display:flex;gap:9px;margin-top:13px}
+.notify input{flex:1;min-width:0;background:#fff;border:1px solid rgba(255,120,128,.45);border-radius:100px;
+  padding:13px 18px;color:var(--ink);font-family:var(--sans);font-size:14.5px;font-weight:500;outline:none;transition:.2s}
+.notify input::placeholder{color:var(--faint)}
+.notify input:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(226,29,40,.1)}
+.notify input.invalid{border-color:var(--red);background:rgba(226,29,40,.05)}
+.notify button{flex-shrink:0;border:none;cursor:pointer;font-weight:800;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;
+  color:#fff;background:linear-gradient(135deg,#ff434c,var(--red) 45%,var(--red-2));border-radius:100px;padding:13px 22px;
+  box-shadow:0 10px 26px -8px rgba(226,29,40,.5),inset 0 1px 0 rgba(255,255,255,.25);transition:.3s;font-family:var(--sans)}
+@media(hover:hover){.notify button:hover{transform:translateY(-2px);box-shadow:0 14px 32px -8px rgba(226,29,40,.6)}}
+.notify .ok{display:none;font-weight:700;color:#1d9d4e;font-size:14.5px;margin-top:13px}
+.notify.done .notify-row{display:none}
+.notify.done .ok{display:block}
+@media(max-width:480px){.notify-row{flex-direction:column}.notify button{padding:14px}}
+
+/* countdown */
+.timer-wrap{margin:30px auto 0;max-width:560px}
+.timer-status{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:14px}
+.clock{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.unit{position:relative;background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;
+  padding:14px 6px 11px;overflow:hidden;box-shadow:var(--shadow-warm)}
+.unit::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent 60%)}
+.unit .num{font-family:var(--num);font-weight:600;font-size:clamp(34px,8vw,52px);line-height:1;color:var(--ink);
+  font-variant-numeric:tabular-nums;position:relative}
+.unit .lab{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:6px;font-weight:600;position:relative}
+
+/* secret offers */
+.secret{padding:44px 0 26px;
+  background:
+    radial-gradient(85% 90% at 50% 0%,rgba(255,160,150,.3),transparent 65%),
+    linear-gradient(180deg,#f8e6e0,#f6e0d8 70%,#f9ebe4);
+  border-top:1px solid rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.7);margin-top:38px}
+.shead{text-align:center;max-width:620px;margin:0 auto 24px}
+.shead .tag{font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--red-bright);font-weight:700}
+.shead h2{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,46px);line-height:1.04;margin:10px 0}
+.shead h2 em{font-style:italic;color:var(--red-bright)}
+.shead p{color:var(--muted);font-weight:300;font-size:15.5px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:860px){.grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}}
+.card{position:relative;border:1.5px solid transparent;border-radius:20px;overflow:hidden;
+  background:linear-gradient(180deg,#ffffff,#fffaf8) padding-box,
+             linear-gradient(150deg,#ffd3cd,#fff 30%,#ffb9b3 60%,#ff8d96 90%) border-box;
+  box-shadow:0 30px 60px -24px rgba(170,40,50,.45),0 6px 18px -8px rgba(170,40,50,.2)}
+.media{position:relative;height:200px;overflow:hidden}
+.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(14px) saturate(.9);transform:scale(1.15)}
+.media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.12) 45%,rgba(255,255,255,.96))}
+.media .q{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;
+  font-family:var(--serif);font-weight:700;font-size:74px;color:var(--red);text-shadow:0 4px 24px rgba(255,255,255,.9)}
+.card-body{padding:6px 20px 20px;text-align:center}
+.card-body .nm{font-family:var(--serif);font-size:21px;font-weight:600}
+.card-body .pr{font-family:var(--num);font-weight:700;font-size:26px;letter-spacing:.14em;color:var(--red-2);margin-top:4px}
+.card-body .hint{font-size:11.5px;color:var(--faint);margin-top:6px}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin:26px 0 6px}
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:500;padding:8px 15px;border-radius:100px;
+  border:1px solid var(--glass-border);background:var(--glass);color:var(--ink);box-shadow:var(--shadow-warm)}
+.chip b{color:var(--red);font-weight:700}
+
+/* footer */
+.foot{padding:34px 0 30px;text-align:center;background:linear-gradient(180deg,#f7e6e0,#f3ddd5);border-top:1px solid rgba(255,255,255,.7);margin-top:40px}
+.foot .lg{font-weight:800;font-size:14px;color:var(--red);letter-spacing:.04em}
+.foot p{color:var(--muted);font-size:13px;font-weight:300;margin-top:8px}
+.foot a{color:var(--red-2);font-weight:600;text-decoration:none}
+.foot .cr{color:var(--faint);font-size:11.5px;margin-top:14px}
+</style>
+</head>
+<body>
+
+<div class="bg-fx"><div class="orb a"></div><div class="orb b"></div></div>
+
+<nav class="nav"><div class="wrap nav-in">
+  <img src="logo.svg" alt="Лазерхауз" class="logo">
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">— Секретна акція —</div>
+  <h1>
+    <span class="l1">ЦІНИ</span>
+    <span class="l2">яких більше не буде!</span>
+  </h1>
+  <p class="hero-sub">Три <b>ТОПові процедури</b> Лазерхауз за спеціальними цінами.
+    Які саме — <b>секрет</b> 🤫 Розкриємо одночасно зі стартом акції.</p>
+
+  <div class="start-box">
+    <div class="lbl">Старт акції</div>
+    <div class="date">27 червня</div>
+    <div class="time">о 10:00</div>
+    <div class="dur">Дія акції — лише 2 дні</div>
+  </div>
+
+  <div class="notify" id="notify">
+    <div class="nt">💌 Дізнайтеся про секретні знижки <b>першими</b></div>
+    <div class="ns">Залиште імейл — надішлемо сповіщення в момент старту акції.</div>
+    <div class="notify-row">
+      <input type="email" id="notifyEmail" inputmode="email" placeholder="ваш@імейл.com" autocomplete="email">
+      <button type="button" id="notifyBtn">Повідомити мене</button>
+    </div>
+    <div class="ok">✓ Готово! Повідомимо вас першими.</div>
+  </div>
+
+  <div class="timer-wrap">
+    <div class="timer-status">До розкриття секрету залишилось</div>
+    <div class="clock">
+      <div class="unit"><div class="num" id="dd">00</div><div class="lab">днів</div></div>
+      <div class="unit"><div class="num" id="hh">00</div><div class="lab">годин</div></div>
+      <div class="unit"><div class="num" id="mm">00</div><div class="lab">хвилин</div></div>
+      <div class="unit"><div class="num" id="ss">00</div><div class="lab">секунд</div></div>
+    </div>
+  </div>
+</div></header>
+
+<section class="secret"><div class="wrap">
+  <div class="shead">
+    <div class="tag">Лімітована пропозиція</div>
+    <h2>Три процедури. <em>Один секрет.</em></h2>
+    <p>Назви та ціни буде розкрито 27 червня о 10:00 — саме тут.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="media"><img src="img/epil.jpg" alt="Секретна процедура 1"><div class="q">?</div></div>
+      <div class="card-body">
+        <div class="nm">Процедура №1</div>
+        <div class="pr">??? грн</div>
+        <div class="hint">Розкриємо 27.06 о 10:00</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="media"><img src="img/botox.jpg" alt="Секретна процедура 2"><div class="q">?</div></div>
+      <div class="card-body">
+        <div class="nm">Процедура №2</div>
+        <div class="pr">??? грн</div>
+        <div class="hint">Розкриємо 27.06 о 10:00</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="media"><img src="img/morpheus.jpg" alt="Секретна процедура 3"><div class="q">?</div></div>
+      <div class="card-body">
+        <div class="nm">Процедура №3</div>
+        <div class="pr">??? грн</div>
+        <div class="hint">Розкриємо 27.06 о 10:00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chips">
+    <span class="chip">⏳ Дія акції — <b>лише 2 дні</b></span>
+    <span class="chip">🔥 <b>Лімітована</b> кількість</span>
+    <span class="chip">✓ Процедури діють <b>до 2 років</b></span>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="wrap">
+  <div class="lg">LASERHOUSE</div>
+  <p>Мережа лазерної епіляції та косметології №1 в Україні<br>
+     <a href="tel:+380931771611">(093) 177-16-11</a> · щодня 9:00–21:00</p>
+  <div class="cr">© 2026 Лазерхауз. Усі права захищені.</div>
+</div></footer>
+
+<script>
+// Той самий момент старту, що й на сторінці акції (index.html).
+const PROMO_START = new Date('2026-06-27T10:00:00+03:00');
+const pad = n => String(n).padStart(2,'0');
+const el = id => document.getElementById(id);
+function tick(){
+  const ms = PROMO_START - new Date();
+  if(ms <= 0){
+    // Акція стартувала — секрет розкрито, ведемо на сторінку акції.
+    location.replace('index.html');
+    return;
+  }
+  const s = Math.floor(ms/1000);
+  el('dd').textContent = pad(Math.floor(s/86400));
+  el('hh').textContent = pad(Math.floor(s%86400/3600));
+  el('mm').textContent = pad(Math.floor(s%3600/60));
+  el('ss').textContent = pad(s%60);
+}
+tick(); setInterval(tick,1000);
+
+/* ===== Збір імейлів =====
+   ЗАГЛУШКА: вкажіть endpoint вашого сервісу розсилки (SendPulse/eSputnik/
+   Mailchimp embedded form action або Google Apps Script Web App) у
+   NOTIFY_ENDPOINT — і форма почне реально зберігати адреси.
+   Поки endpoint порожній, адреса зберігається лише локально (localStorage),
+   щоб UX працював на тестах. */
+const NOTIFY_ENDPOINT = '';
+const notifyBox = el('notify'), notifyEmail = el('notifyEmail');
+if(localStorage.getItem('lh_notify_email')) notifyBox.classList.add('done');
+el('notifyBtn').addEventListener('click', async ()=>{
+  const v = notifyEmail.value.trim();
+  notifyEmail.classList.remove('invalid');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){
+    notifyEmail.classList.add('invalid'); notifyEmail.focus(); return;
+  }
+  if(NOTIFY_ENDPOINT){
+    try{
+      await fetch(NOTIFY_ENDPOINT, {method:'POST', mode:'no-cors',
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:'email='+encodeURIComponent(v)+'&source=promo_announce'});
+    }catch(e){ /* не блокуємо UX через мережеву помилку */ }
+  }
+  localStorage.setItem('lh_notify_email', v);
+  notifyBox.classList.add('done');
+});
+</script>
+</body>
+</html>
