@@ -47,37 +47,45 @@ body{color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;o
 .nav-in{display:flex;align-items:center;justify-content:center;height:74px}
 .logo{height:42px;width:auto;filter:drop-shadow(0 2px 10px rgba(226,29,40,.18))}
 
-.hero{padding:44px 0 20px;text-align:center}
-.eyebrow{font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--red-bright);font-weight:700;margin-bottom:14px}
-.hero h1{font-family:var(--serif);font-weight:600;line-height:.92;letter-spacing:-.01em;font-size:clamp(46px,9vw,96px)}
+.hero{padding:28px 0 12px;text-align:center}
+.eyebrow{font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--red-bright);font-weight:700;margin-bottom:10px}
+.hero h1{font-family:var(--serif);font-weight:600;line-height:.92;letter-spacing:-.01em;font-size:clamp(42px,8vw,84px)}
 .hero h1 .l1{display:block;background:linear-gradient(180deg,#2a1216,#52242b);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero h1 .l2{display:block;font-style:italic;font-weight:500;font-size:.52em;line-height:1.04;margin-top:2px;
   background:linear-gradient(115deg,#241114 5%,var(--red) 45%,var(--coral) 75%,var(--peach));
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.hero-sub{max-width:560px;margin:16px auto 0;color:var(--muted);font-size:clamp(15px,2.2vw,18px);font-weight:300}
+.hero-sub{max-width:560px;margin:10px auto 0;color:var(--muted);font-size:clamp(14px,2vw,16.5px);font-weight:300}
 .hero-sub b{color:var(--ink);font-weight:600}
 
-/* big start */
-.start-box{display:inline-block;margin-top:24px;border:1.5px solid transparent;border-radius:20px;padding:18px 38px;
+/* start date + countdown in one row */
+.start-combo{display:flex;align-items:center;justify-content:center;gap:26px;margin:18px auto 0;max-width:680px;
+  border:1.5px solid transparent;border-radius:20px;padding:16px 26px;
   background:linear-gradient(180deg,#fffdfc,#fef4f0) padding-box,
              linear-gradient(140deg,#ffd3cd,#fff 35%,#ffaeb4 65%,#ff8d96) border-box;
   box-shadow:0 22px 46px -22px rgba(170,40,50,.4)}
-.start-box .lbl{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--red-2);font-weight:700}
-.start-box .date{font-family:var(--serif);font-weight:600;font-size:clamp(36px,6vw,54px);line-height:1.05}
-.start-box .time{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(22px,3.5vw,32px);color:var(--red)}
-.start-box .dur{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--red-2);font-weight:700;margin-top:6px}
+.sc-left{text-align:center;flex-shrink:0}
+.sc-left .lbl{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--red-2);font-weight:700}
+.sc-left .date{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4.5vw,40px);line-height:1.05;white-space:nowrap}
+.sc-left .time{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(18px,3vw,24px);color:var(--red)}
+.sc-left .dur{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--red-2);font-weight:700;margin-top:4px}
+.sc-right{flex:1;min-width:0;border-left:1px solid rgba(226,29,40,.15);padding-left:26px}
+.sc-right .timer-status{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:8px;text-align:center}
+@media(max-width:640px){
+  .start-combo{flex-direction:column;gap:12px;padding:16px 16px 14px}
+  .sc-right{border-left:none;padding-left:0;width:100%;border-top:1px solid rgba(226,29,40,.15);padding-top:12px}
+}
 
 /* email capture */
-.notify{max-width:520px;margin:26px auto 0;border:1.5px solid transparent;border-radius:18px;padding:20px 22px;
-  background:linear-gradient(135deg,rgba(255,67,76,.09),rgba(255,255,255,.9) 40%,rgba(255,180,160,.16)) padding-box,
-             linear-gradient(140deg,#ff8d96,#ffd3cd 40%,#fff 60%,#ffaeb4) border-box;
-  box-shadow:0 24px 50px -24px rgba(170,40,50,.45)}
+.notify{max-width:560px;margin:16px auto 0;border:2px solid transparent;border-radius:18px;padding:16px 20px;
+  background:linear-gradient(135deg,rgba(255,67,76,.16),rgba(255,255,255,.95) 42%,rgba(255,150,130,.24)) padding-box,
+             linear-gradient(140deg,#ff434c,#ffb9b3 40%,#ff8d96 70%,#e21d28) border-box;
+  box-shadow:0 22px 50px -20px rgba(226,29,40,.5),0 0 0 5px rgba(226,29,40,.05)}
 .notify .nt{font-weight:700;font-size:15.5px}
 .notify .nt b{color:var(--red)}
 .notify .ns{font-size:12.5px;color:var(--muted);font-weight:300;margin-top:3px}
-.notify-row{display:flex;gap:9px;margin-top:13px}
-.notify input{flex:1;min-width:0;background:#fff;border:1px solid rgba(255,120,128,.45);border-radius:100px;
+.notify-row{display:flex;gap:9px;margin-top:11px}
+.notify input{flex:1;min-width:0;background:#fff;border:2px solid rgba(226,29,40,.4);border-radius:100px;
   padding:13px 18px;color:var(--ink);font-family:var(--sans);font-size:14.5px;font-weight:500;outline:none;transition:.2s}
 .notify input::placeholder{color:var(--faint)}
 .notify input:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(226,29,40,.1)}
@@ -91,23 +99,21 @@ body{color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;o
 .notify.done .ok{display:block}
 @media(max-width:480px){.notify-row{flex-direction:column}.notify button{padding:14px}}
 
-/* countdown */
-.timer-wrap{margin:30px auto 0;max-width:560px}
-.timer-status{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:14px}
-.clock{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.unit{position:relative;background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;
-  padding:14px 6px 11px;overflow:hidden;box-shadow:var(--shadow-warm)}
+/* countdown (компактний, в одному рядку з датою) */
+.clock{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.unit{position:relative;background:var(--glass);border:1px solid var(--glass-border);border-radius:12px;
+  padding:9px 4px 7px;overflow:hidden;box-shadow:var(--shadow-warm);text-align:center}
 .unit::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.7),transparent 60%)}
-.unit .num{font-family:var(--num);font-weight:600;font-size:clamp(34px,8vw,52px);line-height:1;color:var(--ink);
+.unit .num{font-family:var(--num);font-weight:600;font-size:clamp(24px,4vw,34px);line-height:1;color:var(--ink);
   font-variant-numeric:tabular-nums;position:relative}
-.unit .lab{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-top:6px;font-weight:600;position:relative}
+.unit .lab{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:4px;font-weight:600;position:relative}
 
 /* secret offers */
-.secret{padding:44px 0 26px;
+.secret{padding:34px 0 22px;
   background:
     radial-gradient(85% 90% at 50% 0%,rgba(255,160,150,.3),transparent 65%),
     linear-gradient(180deg,#f8e6e0,#f6e0d8 70%,#f9ebe4);
-  border-top:1px solid rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.7);margin-top:38px}
+  border-top:1px solid rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.7);margin-top:26px}
 .shead{text-align:center;max-width:620px;margin:0 auto 24px}
 .shead .tag{font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--red-bright);font-weight:700}
 .shead h2{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,46px);line-height:1.04;margin:10px 0}
@@ -119,7 +125,7 @@ body{color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;o
   background:linear-gradient(180deg,#ffffff,#fffaf8) padding-box,
              linear-gradient(150deg,#ffd3cd,#fff 30%,#ffb9b3 60%,#ff8d96 90%) border-box;
   box-shadow:0 30px 60px -24px rgba(170,40,50,.45),0 6px 18px -8px rgba(170,40,50,.2)}
-.media{position:relative;height:200px;overflow:hidden}
+.media{position:relative;height:170px;overflow:hidden}
 .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(14px) saturate(.9);transform:scale(1.15)}
 .media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.12) 45%,rgba(255,255,255,.96))}
 .media .q{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;
@@ -136,7 +142,7 @@ body{color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;o
 .chip b{color:var(--red);font-weight:700}
 
 /* footer */
-.foot{padding:34px 0 30px;text-align:center;background:linear-gradient(180deg,#f7e6e0,#f3ddd5);border-top:1px solid rgba(255,255,255,.7);margin-top:40px}
+.foot{padding:28px 0 24px;text-align:center;background:linear-gradient(180deg,#f7e6e0,#f3ddd5);border-top:1px solid rgba(255,255,255,.7);margin-top:30px}
 .foot .lg{font-weight:800;font-size:14px;color:var(--red);letter-spacing:.04em}
 .foot p{color:var(--muted);font-size:13px;font-weight:300;margin-top:8px}
 .foot a{color:var(--red-2);font-weight:600;text-decoration:none}
@@ -160,11 +166,22 @@ body{color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;o
   <p class="hero-sub">Три <b>ТОПові процедури</b> Лазерхауз за спеціальними цінами.
     Які саме — <b>секрет</b> 🤫 Розкриємо одночасно зі стартом акції.</p>
 
-  <div class="start-box">
-    <div class="lbl">Старт акції</div>
-    <div class="date">27 червня</div>
-    <div class="time">о 10:00</div>
-    <div class="dur">Дія акції — лише 2 дні</div>
+  <div class="start-combo">
+    <div class="sc-left">
+      <div class="lbl">Старт акції</div>
+      <div class="date">27 червня</div>
+      <div class="time">о 10:00</div>
+      <div class="dur">Лише 2 дні</div>
+    </div>
+    <div class="sc-right">
+      <div class="timer-status">До розкриття секрету</div>
+      <div class="clock">
+        <div class="unit"><div class="num" id="dd">00</div><div class="lab">днів</div></div>
+        <div class="unit"><div class="num" id="hh">00</div><div class="lab">годин</div></div>
+        <div class="unit"><div class="num" id="mm">00</div><div class="lab">хвилин</div></div>
+        <div class="unit"><div class="num" id="ss">00</div><div class="lab">секунд</div></div>
+      </div>
+    </div>
   </div>
 
   <div class="notify" id="notify">
@@ -175,16 +192,6 @@ body{color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.55;o
       <button type="button" id="notifyBtn">Повідомити мене</button>
     </div>
     <div class="ok">✓ Готово! Повідомимо вас першими.</div>
-  </div>
-
-  <div class="timer-wrap">
-    <div class="timer-status">До розкриття секрету залишилось</div>
-    <div class="clock">
-      <div class="unit"><div class="num" id="dd">00</div><div class="lab">днів</div></div>
-      <div class="unit"><div class="num" id="hh">00</div><div class="lab">годин</div></div>
-      <div class="unit"><div class="num" id="mm">00</div><div class="lab">хвилин</div></div>
-      <div class="unit"><div class="num" id="ss">00</div><div class="lab">секунд</div></div>
-    </div>
   </div>
 </div></header>
 
